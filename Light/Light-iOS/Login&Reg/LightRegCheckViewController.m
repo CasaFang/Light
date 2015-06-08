@@ -77,7 +77,6 @@
         _checkNum.background=[[UIImage imageNamed:@"operationbox_text"]stretchableImageWithLeftCapWidth:10 topCapHeight:15];
         _checkNum.horizontalPadding = TextFieldPadding;
         _checkNum.verticalPadding = TextFieldPadding;
-        _checkNum.delegate = self;
         _checkNum.returnKeyType = UIReturnKeyDefault;
         _checkNum.clearButtonMode = UITextFieldViewModeWhileEditing;
     }
@@ -100,32 +99,79 @@
 }
 
 -(void)toRegister:(id)sender{
-    [SMS_SDK commitVerifyCode:self.checkNum.text result:^(enum SMS_ResponseState state) {
-        if (1==state)
-        {
-            NSLog(@"验证成功");
-            [[UIApplication sharedApplication] setStatusBarHidden:NO];
-            LightRegDetailViewController *detail = [[LightRegDetailViewController alloc]init];
-            //    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:check];
-            //    [nav.navigationController release];
-            //    [self presentViewController:nav animated:YES completion:nil];
-            detail.userId = self.userId;
-            [self.navigationController pushViewController:detail animated:YES];
+    if ([self.type isEqualToString:@"email"]){
+        NSDictionary *registerDictionary = [NSDictionary dictionaryWithObjectsAndKeys:self.userId,@"user_id",self.checkNum.text,@"val_code", nil];
+        NSError * error;
+        NSLog(@"registerDictionary is %@",registerDictionary);
+        NSData *jsonData = [NSJSONSerialization dataWithJSONObject:registerDictionary options:NSJSONWritingPrettyPrinted error:&error];
+        NSString *registerStr = [[NSString alloc]initWithData:jsonData encoding:NSUTF8StringEncoding];
+        NSLog(@"registerString is %@",registerStr);
+        
+        NSMutableData *tempJsonData = [NSMutableData dataWithData:jsonData];
+        
+        NSURL *url = [NSURL URLWithString:CheckURL];
+        
+        NSMutableURLRequest *requst = [NSMutableURLRequest requestWithURL:url];
+        
+        [requst setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+        [requst setHTTPMethod:@"POST"];
+        [requst setHTTPBody:tempJsonData];
+        NSOperationQueue *queue = [NSOperationQueue mainQueue];
+        [NSURLConnection sendAsynchronousRequest:requst queue:queue completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+            if(data){
+                NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
+                NSString *error1 = dict[@"error"];
+                if(!error1)
+                {
+                    
+                    NSError *err;
+                    NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&err];
+                    NSString *valide_result = dic[@"validate_result"];
+                    NSLog(@"responseDictionary is %@",dic);
+                    [[UIApplication sharedApplication] setStatusBarHidden:NO];
+                    LightRegDetailViewController *detail = [[LightRegDetailViewController alloc]init];
+                    //    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:check];
+                    //    [nav.navigationController release];
+                    //    [self presentViewController:nav animated:YES completion:nil];
+                    detail.userId = self.userId;
+                    [self.navigationController pushViewController:detail animated:YES];
+                    
+                }
+            }else{
+                NSLog(@"connection error");
+            }
+        }];
 
+    }else
+    {
+        [SMS_SDK commitVerifyCode:self.checkNum.text result:^(enum SMS_ResponseState state) {
+            if (1==state)
+            {
+                NSLog(@"验证成功");
+                [[UIApplication sharedApplication] setStatusBarHidden:NO];
+                LightRegDetailViewController *detail = [[LightRegDetailViewController alloc]init];
+                //    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:check];
+                //    [nav.navigationController release];
+                //    [self presentViewController:nav animated:YES completion:nil];
+                detail.userId = self.userId;
+                [self.navigationController pushViewController:detail animated:YES];
+                
+                
+            }
+            else if(0==state)
+            {
+                NSLog(@"验证失败");
+                NSString* str=[NSString stringWithFormat:NSLocalizedString(@"verifycodeerrormsg", nil)];
+                UIAlertView* alert=[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"verifycodeerrortitle", nil)
+                                                              message:str
+                                                             delegate:self
+                                                    cancelButtonTitle:NSLocalizedString(@"sure", nil)
+                                                    otherButtonTitles:nil, nil];
+            }
+        }];
+        
+    }
 
-        }
-        else if(0==state)
-        {
-            NSLog(@"验证失败");
-            NSString* str=[NSString stringWithFormat:NSLocalizedString(@"verifycodeerrormsg", nil)];
-            UIAlertView* alert=[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"verifycodeerrortitle", nil)
-                                                          message:str
-                                                         delegate:self
-                                                cancelButtonTitle:NSLocalizedString(@"sure", nil)
-                                                otherButtonTitles:nil, nil];
-            [alert show];
-        }
-    }];
 }
 
 

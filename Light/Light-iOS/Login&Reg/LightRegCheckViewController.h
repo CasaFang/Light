@@ -12,5 +12,6 @@
 @interface LightRegCheckViewController : UIViewController
 
 @property (nonatomic) NSString *userId;
+@property (nonatomic) NSString *type;
 
 @end

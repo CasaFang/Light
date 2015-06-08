@@ -22,6 +22,7 @@
 @property (nonatomic,strong) UIButton *registerButton;
 @property (nonatomic,strong) UIButton *haveAccountButton;
 
++(BOOL) validateEmail:(NSString *)registerStr;
 @end
 
 @implementation LightRegisterViewController
@@ -67,7 +68,7 @@
     if(_banner == nil){
 //        _banner = [[UILabel alloc]initWithFrame:CGRectMake(HorizontalSpacing, CGRectGetHeight(self.view.frame)/4, _banner.text.length,TextFieldHeight/2)];
         _banner = [[UILabel alloc]initWithFrame:CGRectMake(HorizontalSpacing, CGRectGetHeight(self.view.frame)/4, CGRectGetWidth(self.registerNum.frame)/2, 10)];
-        _banner.text = @"请输入电子邮箱:";
+        _banner.text = @"请输入手机号:";
         _banner.textColor = [UIColor redColor];
         _banner.font = [UIFont systemFontOfSize:15];
         _banner.textAlignment=UIControlContentHorizontalAlignmentLeft;
@@ -104,15 +105,22 @@
     return _continueButton;
 }
 
--(UIButton *)registerButton {
+-(UIButton *)registerButton{
     if(_registerButton == nil){
         _registerButton = [UIButton buttonWithType:UIButtonTypeCustom];
         _registerButton = [[UIButton alloc]initWithFrame:CGRectMake(CGRectGetMinX(self.registerNum.frame)+CGRectGetWidth(self.registerNum.frame)/6, CGRectGetMaxY(self.continueButton.frame)+VerticalSpacing,CGRectGetWidth(self.registerNum.frame)*2/3 , TextFieldHeight)];
-        [_registerButton setTitle:@"使用手机号注册" forState:UIControlStateNormal];
-        [_registerButton setTitle:@"使用电子邮箱注册" forState:UIControlStateDisabled];
+        if(_registerButton.tag != 1){
+            [_registerButton setTitle:@"使用电子邮箱注册" forState:UIControlStateNormal];
+            _registerButton.tag = 1;
+        }else{
+            [_registerButton setTitle:@"使用手机号注册" forState:UIControlStateNormal];
+            _registerButton.tag = 2;
+        }
+        NSLog(_registerButton.titleLabel.text);
         [_registerButton setBackgroundImage:[[UIImage imageNamed:@"blue_login_normal"]stretchableImageWithLeftCapWidth:10 topCapHeight:15 ] forState:UIControlStateNormal];
         [_registerButton setBackgroundImage:[[UIImage imageNamed:@"blue_login_disable"] stretchableImageWithLeftCapWidth:10 topCapHeight:15 ] forState:UIControlStateDisabled];
         [_registerButton setBackgroundImage:[[UIImage imageNamed:@"blue_login_highlight"]stretchableImageWithLeftCapWidth:10 topCapHeight:15 ] forState:UIControlStateHighlighted];
+        
         _registerButton.enabled = YES;
         [_registerButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [_registerButton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
@@ -137,6 +145,18 @@
     return _haveAccountButton;
 }
 
++(BOOL) validateEmail:(NSString *)registerStr
+{
+    NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
+    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
+    if([emailTest evaluateWithObject:registerStr]){
+        return YES;
+    }
+    else{
+        return NO;
+    }
+}
+
 -(void)toContinue:(id)sender{
     NSDictionary *registerDictionary = [NSDictionary dictionaryWithObjectsAndKeys:self.registerNum.text,@"code", nil];
     NSError * error;
@@ -159,36 +179,33 @@
         if(data){
             NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
             NSString *error1 = dict[@"error"];
-            if(error1){
-                NSLog(error1);
-            }else
-            {
+            if(!error1){
                 NSError *err;
                 NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&err];
                 NSString *userId = dic[@"user_id"];
-                NSLog(@"checkDictionary is %@",dic);
-                NSLog(@"邮箱注册成功");
-//                if ([]){
-                    
-//                }
-                [SMS_SDK getVerificationCodeBySMSWithPhone:self.registerNum.text zone:@"86" result:^(SMS_SDKError *error) {
-                    if(!error){
-                        [[UIApplication sharedApplication] setStatusBarHidden:NO];
-                        LightRegCheckViewController *check = [[LightRegCheckViewController alloc]init];
-                        //    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:check];
-                        //    [nav.navigationController release];
-                        //    [self presentViewController:nav animated:YES completion:nil];
-                        check.userId = userId;
-                        [self.navigationController pushViewController:check animated:YES];
-                    }
-
-                }];
+                
+                [[UIApplication sharedApplication] setStatusBarHidden:NO];
+                
+                if([LightRegisterViewController validateEmail:self.registerNum.text]){
+                    LightRegCheckViewController *check = [[LightRegCheckViewController alloc]init];
+                    check.userId = userId;
+                    check.type= @"email";
+                    [self.navigationController pushViewController:check animated:YES];
+                }
+                else{
+                    [SMS_SDK getVerificationCodeBySMSWithPhone:self.registerNum.text zone:@"86" result:^(SMS_SDKError *error) {
+                        if(!error){
+                            [[UIApplication sharedApplication] setStatusBarHidden:NO];
+                            LightRegCheckViewController *check = [[LightRegCheckViewController alloc]init];
+                            check.type = @"phone";
+                            [self.navigationController pushViewController:check animated:YES];
+                        }
+                    }];
+                }
             }
-        }else{
-            NSLog(@"connection error");
         }
     }];
-
+    
 
 }
 
@@ -202,13 +219,15 @@
     [self presentViewController:nav animated:YES completion:nil];
 }
 
--(void)changeType:(id) sender{
-    if(_registerButton.highlighted == YES){
-        _registerButton.highlighted == NO;
-        self.banner.text=@"请输入手机号:";
-    }else{
-        _registerButton.highlighted ==YES;
+-(void)changeType:(UIButton *) type{
+    if(type.tag == 1){
         self.banner.text=@"请输入电子邮箱:";
+        [self.registerButton setTitle:@"使用手机号注册" forState:UIControlStateNormal];
+        self.registerButton.tag = 2;
+    }else{
+        self.banner.text=@"请输入手机号:";
+        [self.registerButton setTitle:@"使用电子邮箱注册" forState:UIControlStateNormal];
+        self.registerButton.tag = 1;
     }
 }
 
