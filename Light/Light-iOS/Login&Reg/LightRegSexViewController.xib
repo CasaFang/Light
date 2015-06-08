@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LightRegSexViewController">
+            <connections>
+                <outlet property="bioFemaleButton" destination="Uav-d6-s45" id="e5U-Li-HMa"/>
+                <outlet property="bioMaleButton" destination="VWG-bZ-vtd" id="zgh-KH-qc1"/>
+                <outlet property="bioOtherButton" destination="GRs-gu-sVw" id="j86-2V-S2y"/>
+                <outlet property="biometricSexText" destination="IIo-gI-SZD" id="G1D-2H-Fbr"/>
+                <outlet property="psyFemaleButton" destination="KSM-s4-hPE" id="901-Bk-Krz"/>
+                <outlet property="psyMaleButton" destination="qkr-by-ErC" id="CBQ-lP-Moy"/>
+                <outlet property="psyOtherButton" destination="3Rb-18-U4O" id="Lc2-dW-Dxr"/>
+                <outlet property="psychologySexText" destination="Y6H-WQ-HjS" id="6Ex-I1-jNd"/>
+                <outlet property="view" destination="iN0-l3-epB" id="O9u-mq-bbR"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="你的生理性别是：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IIo-gI-SZD">
+                    <rect key="frame" x="86" y="74" width="146" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VWG-bZ-vtd">
+                    <rect key="frame" x="85" y="134" width="46" height="30"/>
+                    <state key="normal" title="男性">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GRs-gu-sVw">
+                    <rect key="frame" x="277" y="134" width="46" height="30"/>
+                    <state key="normal" title="其他">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uav-d6-s45">
+                    <rect key="frame" x="468" y="134" width="46" height="30"/>
+                    <state key="normal" title="女性">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qkr-by-ErC">
+                    <rect key="frame" x="86" y="353" width="46" height="30"/>
+                    <state key="normal" title="男性">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Rb-18-U4O">
+                    <rect key="frame" x="277" y="353" width="46" height="30"/>
+                    <state key="normal" title="其他">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KSM-s4-hPE">
+                    <rect key="frame" x="468" y="353" width="46" height="30"/>
+                    <state key="normal" title="女性">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="你的心理性别是：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y6H-WQ-HjS">
+                    <rect key="frame" x="86" y="246" width="146" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="VWG-bZ-vtd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="85" id="3Qr-AH-rLl"/>
+                <constraint firstItem="IIo-gI-SZD" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="76" id="5HO-7p-hDv"/>
+                <constraint firstItem="GRs-gu-sVw" firstAttribute="top" secondItem="IIo-gI-SZD" secondAttribute="bottom" constant="37" id="Atc-CW-Sba"/>
+                <constraint firstItem="Uav-d6-s45" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="134" id="Eic-7V-I5E"/>
+                <constraint firstAttribute="trailing" secondItem="KSM-s4-hPE" secondAttribute="trailing" constant="86" id="N6y-mK-LiG"/>
+                <constraint firstAttribute="centerX" secondItem="GRs-gu-sVw" secondAttribute="centerX" id="RNL-Jx-uzE"/>
+                <constraint firstAttribute="bottom" secondItem="qkr-by-ErC" secondAttribute="bottom" constant="217" id="TdB-Ty-Uo9"/>
+                <constraint firstItem="VWG-bZ-vtd" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="134" id="VAQ-XT-hCI"/>
+                <constraint firstItem="IIo-gI-SZD" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="86" id="VNk-On-1ek"/>
+                <constraint firstAttribute="centerX" secondItem="3Rb-18-U4O" secondAttribute="centerX" id="e8M-MO-Cvy"/>
+                <constraint firstItem="Y6H-WQ-HjS" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="86" id="mQC-Gm-1MR"/>
+                <constraint firstAttribute="trailing" secondItem="Uav-d6-s45" secondAttribute="trailing" constant="86" id="mkG-4B-U3t"/>
+                <constraint firstAttribute="bottom" secondItem="KSM-s4-hPE" secondAttribute="bottom" constant="217" id="mof-1u-Xf5"/>
+                <constraint firstAttribute="bottom" secondItem="3Rb-18-U4O" secondAttribute="bottom" constant="217" id="ojL-IX-Lfk"/>
+                <constraint firstItem="Y6H-WQ-HjS" firstAttribute="top" secondItem="GRs-gu-sVw" secondAttribute="bottom" constant="82" id="veN-kX-dUD"/>
+                <constraint firstItem="qkr-by-ErC" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="86" id="zJA-DU-guq"/>
+            </constraints>
+            <point key="canvasLocation" x="190" y="286"/>
+        </view>
+    </objects>
+</document>
