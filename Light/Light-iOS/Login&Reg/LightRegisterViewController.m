@@ -250,12 +250,13 @@
                 NSString *userId = dic[@"user_id"];
                 
                 [[UIApplication sharedApplication] setStatusBarHidden:NO];
-                
+                check.userId = userId;
+                [self.navigationController pushViewController:check animated:NO];
                 if(type.tag == 1){
 
-                    check.userId = userId;
+//                    check.userId = userId;
                     check.type= @"email";
-                    [self.navigationController pushViewController:check animated:YES];
+//                    [self.navigationController pushViewController:check animated:YES];
                 }
                 else{
                     NSString *getBegin = [dateFormatter stringFromDate:[NSDate date]];
@@ -267,9 +268,9 @@
                             NSString *getCheckNum = [dateFormatter stringFromDate:[NSDate date]];
                             NSLog(@"获得验证码的时间:%@",getCheckNum);
                             [[UIApplication sharedApplication] setStatusBarHidden:NO];
-                            check.userId = userId;
+//                            check.userId = userId;
                             check.type = @"phone";
-                            [self.navigationController pushViewController:check animated:YES];
+//                            [self.navigationController pushViewController:check animated:YES];
                         }
                     }];
                 }

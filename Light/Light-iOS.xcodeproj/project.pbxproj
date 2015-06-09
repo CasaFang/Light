@@ -31,13 +31,13 @@
 		04545CBD1B2745B500E128B2 /* LightIntroPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 04545CBC1B2745B500E128B2 /* LightIntroPage.m */; };
 		04545CC01B27461300E128B2 /* LightIntroView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04545CBF1B27461300E128B2 /* LightIntroView.m */; };
 		04545CC31B27467D00E128B2 /* LightIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04545CC21B27467D00E128B2 /* LightIntroViewController.m */; };
-		04545CD41B27526C00E128B2 /* Intro01.png in Resources */ = {isa = PBXBuildFile; fileRef = 04545CCF1B27526C00E128B2 /* Intro01.png */; };
-		04545CD51B27526C00E128B2 /* Intro02.png in Resources */ = {isa = PBXBuildFile; fileRef = 04545CD01B27526C00E128B2 /* Intro02.png */; };
-		04545CD61B27526C00E128B2 /* Intro03.png in Resources */ = {isa = PBXBuildFile; fileRef = 04545CD11B27526C00E128B2 /* Intro03.png */; };
-		04545CD71B27526C00E128B2 /* Intro04.png in Resources */ = {isa = PBXBuildFile; fileRef = 04545CD21B27526C00E128B2 /* Intro04.png */; };
-		04545CD81B27526C00E128B2 /* Intro05.png in Resources */ = {isa = PBXBuildFile; fileRef = 04545CD31B27526C00E128B2 /* Intro05.png */; };
 		04545CDB1B27548C00E128B2 /* LightIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = 04545CDA1B27548C00E128B2 /* LightIndex.m */; };
 		04545CDE1B27552700E128B2 /* CommonConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 04545CDD1B27552700E128B2 /* CommonConfig.m */; };
+		04545CE41B27A87D00E128B2 /* Intro01.png in Resources */ = {isa = PBXBuildFile; fileRef = 04545CDF1B27A87D00E128B2 /* Intro01.png */; };
+		04545CE51B27A87D00E128B2 /* Intro02.png in Resources */ = {isa = PBXBuildFile; fileRef = 04545CE01B27A87D00E128B2 /* Intro02.png */; };
+		04545CE61B27A87D00E128B2 /* Intro03.png in Resources */ = {isa = PBXBuildFile; fileRef = 04545CE11B27A87D00E128B2 /* Intro03.png */; };
+		04545CE71B27A87D00E128B2 /* Intro04.png in Resources */ = {isa = PBXBuildFile; fileRef = 04545CE21B27A87D00E128B2 /* Intro04.png */; };
+		04545CE81B27A87D00E128B2 /* Intro05.png in Resources */ = {isa = PBXBuildFile; fileRef = 04545CE31B27A87D00E128B2 /* Intro05.png */; };
 		04C598591B1C8178004A2FA9 /* ImageScale.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C598581B1C8178004A2FA9 /* ImageScale.m */; };
 		04C5986B1B1C835B004A2FA9 /* FanKuiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C5985C1B1C835B004A2FA9 /* FanKuiViewController.m */; };
 		04C5986C1B1C835B004A2FA9 /* GeRenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C5985E1B1C835B004A2FA9 /* GeRenViewController.m */; };
@@ -144,15 +144,15 @@
 		04545CBF1B27461300E128B2 /* LightIntroView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LightIntroView.m; path = "引导页/LightIntroView.m"; sourceTree = "<group>"; };
 		04545CC11B27467D00E128B2 /* LightIntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LightIntroViewController.h; path = "引导页/LightIntroViewController.h"; sourceTree = "<group>"; };
 		04545CC21B27467D00E128B2 /* LightIntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LightIntroViewController.m; path = "引导页/LightIntroViewController.m"; sourceTree = "<group>"; };
-		04545CCF1B27526C00E128B2 /* Intro01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Intro01.png; path = "引导页/Intro01.png"; sourceTree = "<group>"; };
-		04545CD01B27526C00E128B2 /* Intro02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Intro02.png; path = "引导页/Intro02.png"; sourceTree = "<group>"; };
-		04545CD11B27526C00E128B2 /* Intro03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Intro03.png; path = "引导页/Intro03.png"; sourceTree = "<group>"; };
-		04545CD21B27526C00E128B2 /* Intro04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Intro04.png; path = "引导页/Intro04.png"; sourceTree = "<group>"; };
-		04545CD31B27526C00E128B2 /* Intro05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Intro05.png; path = "引导页/Intro05.png"; sourceTree = "<group>"; };
 		04545CD91B27548C00E128B2 /* LightIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LightIndex.h; path = API/LightIndex.h; sourceTree = "<group>"; };
 		04545CDA1B27548C00E128B2 /* LightIndex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LightIndex.m; path = API/LightIndex.m; sourceTree = "<group>"; };
 		04545CDC1B27552700E128B2 /* CommonConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommonConfig.h; path = Utils/CommonConfig.h; sourceTree = "<group>"; };
 		04545CDD1B27552700E128B2 /* CommonConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommonConfig.m; path = Utils/CommonConfig.m; sourceTree = "<group>"; };
+		04545CDF1B27A87D00E128B2 /* Intro01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Intro01.png; path = "引导页/Intro01.png"; sourceTree = "<group>"; };
+		04545CE01B27A87D00E128B2 /* Intro02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Intro02.png; path = "引导页/Intro02.png"; sourceTree = "<group>"; };
+		04545CE11B27A87D00E128B2 /* Intro03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Intro03.png; path = "引导页/Intro03.png"; sourceTree = "<group>"; };
+		04545CE21B27A87D00E128B2 /* Intro04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Intro04.png; path = "引导页/Intro04.png"; sourceTree = "<group>"; };
+		04545CE31B27A87D00E128B2 /* Intro05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Intro05.png; path = "引导页/Intro05.png"; sourceTree = "<group>"; };
 		04C598571B1C8178004A2FA9 /* ImageScale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageScale.h; sourceTree = "<group>"; };
 		04C598581B1C8178004A2FA9 /* ImageScale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageScale.m; sourceTree = "<group>"; };
 		04C5985B1B1C835B004A2FA9 /* FanKuiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FanKuiViewController.h; sourceTree = "<group>"; };
@@ -385,11 +385,11 @@
 		04545CC41B274C4900E128B2 /* 引导页 */ = {
 			isa = PBXGroup;
 			children = (
-				04545CCF1B27526C00E128B2 /* Intro01.png */,
-				04545CD01B27526C00E128B2 /* Intro02.png */,
-				04545CD11B27526C00E128B2 /* Intro03.png */,
-				04545CD21B27526C00E128B2 /* Intro04.png */,
-				04545CD31B27526C00E128B2 /* Intro05.png */,
+				04545CDF1B27A87D00E128B2 /* Intro01.png */,
+				04545CE01B27A87D00E128B2 /* Intro02.png */,
+				04545CE11B27A87D00E128B2 /* Intro03.png */,
+				04545CE21B27A87D00E128B2 /* Intro04.png */,
+				04545CE31B27A87D00E128B2 /* Intro05.png */,
 			);
 			name = "引导页";
 			sourceTree = "<group>";
@@ -862,13 +862,13 @@
 			files = (
 				04C598C81B1CA30A004A2FA9 /* love_48*48_grey.png in Resources */,
 				04C598C21B1CA30A004A2FA9 /* KPY_48*48_grey.png in Resources */,
-				04545CD61B27526C00E128B2 /* Intro03.png in Resources */,
+				04545CE61B27A87D00E128B2 /* Intro03.png in Resources */,
 				04C599001B1CA55E004A2FA9 /* love_32*32_blue.png in Resources */,
 				04C599021B1CA55E004A2FA9 /* love_32*32_grey.png in Resources */,
 				04C598F71B1CA55E004A2FA9 /* KPY_24*24_blue.png in Resources */,
 				04C598F11B1CA55E004A2FA9 /* index_24*24_grey.png in Resources */,
 				04C598CD1B1CA30A004A2FA9 /* KDG_48*48_blue.png in Resources */,
-				04545CD41B27526C00E128B2 /* Intro01.png in Resources */,
+				04545CE41B27A87D00E128B2 /* Intro01.png in Resources */,
 				04C599011B1CA55E004A2FA9 /* love_24*24_grey.png in Resources */,
 				04C598DA1B1CA30A004A2FA9 /* index_48*48_grey.png in Resources */,
 				04C5990A1B1CB286004A2FA9 /* left_view.png in Resources */,
@@ -886,8 +886,8 @@
 				04C598D41B1CA30A004A2FA9 /* MSG_48*48_grey.png in Resources */,
 				04C598FD1B1CA55E004A2FA9 /* MSG_24*24_blue.png in Resources */,
 				04C598F81B1CA55E004A2FA9 /* KPY_32*32_blue.png in Resources */,
-				04545CD81B27526C00E128B2 /* Intro05.png in Resources */,
-				04545CD71B27526C00E128B2 /* Intro04.png in Resources */,
+				04545CE81B27A87D00E128B2 /* Intro05.png in Resources */,
+				04545CE71B27A87D00E128B2 /* Intro04.png in Resources */,
 				043667ED1B16D9B9009AC914 /* Images.xcassets in Resources */,
 				04C598FA1B1CA55E004A2FA9 /* KPY_32*32_grey.png in Resources */,
 				04C598F31B1CA55E004A2FA9 /* KDG_24*24_grey.png in Resources */,
@@ -901,7 +901,7 @@
 				04C598F41B1CA55E004A2FA9 /* KDG_32*32_grey.png in Resources */,
 				04DF61521B1F2668001AD649 /* LightRegSexViewController.xib in Resources */,
 				04C598EF1B1CA55E004A2FA9 /* index_32*32_blue.png in Resources */,
-				04545CD51B27526C00E128B2 /* Intro02.png in Resources */,
+				04545CE51B27A87D00E128B2 /* Intro02.png in Resources */,
 				04C598F61B1CA55E004A2FA9 /* KDG_32*32_blue.png in Resources */,
 				043668091B1A2B42009AC914 /* login_background.png in Resources */,
 				04C598F01B1CA55E004A2FA9 /* index_24*24_blue.png in Resources */,
