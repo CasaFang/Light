@@ -28,6 +28,16 @@
 		0436680D1B1A3988009AC914 /* LightUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0436680C1B1A3988009AC914 /* LightUser.m */; };
 		0436680F1B1A3FB6009AC914 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0436680E1B1A3FB6009AC914 /* CFNetwork.framework */; };
 		043668121B1A419A009AC914 /* LightRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 043668111B1A419A009AC914 /* LightRegisterViewController.m */; };
+		04545CBD1B2745B500E128B2 /* LightIntroPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 04545CBC1B2745B500E128B2 /* LightIntroPage.m */; };
+		04545CC01B27461300E128B2 /* LightIntroView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04545CBF1B27461300E128B2 /* LightIntroView.m */; };
+		04545CC31B27467D00E128B2 /* LightIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04545CC21B27467D00E128B2 /* LightIntroViewController.m */; };
+		04545CD41B27526C00E128B2 /* Intro01.png in Resources */ = {isa = PBXBuildFile; fileRef = 04545CCF1B27526C00E128B2 /* Intro01.png */; };
+		04545CD51B27526C00E128B2 /* Intro02.png in Resources */ = {isa = PBXBuildFile; fileRef = 04545CD01B27526C00E128B2 /* Intro02.png */; };
+		04545CD61B27526C00E128B2 /* Intro03.png in Resources */ = {isa = PBXBuildFile; fileRef = 04545CD11B27526C00E128B2 /* Intro03.png */; };
+		04545CD71B27526C00E128B2 /* Intro04.png in Resources */ = {isa = PBXBuildFile; fileRef = 04545CD21B27526C00E128B2 /* Intro04.png */; };
+		04545CD81B27526C00E128B2 /* Intro05.png in Resources */ = {isa = PBXBuildFile; fileRef = 04545CD31B27526C00E128B2 /* Intro05.png */; };
+		04545CDB1B27548C00E128B2 /* LightIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = 04545CDA1B27548C00E128B2 /* LightIndex.m */; };
+		04545CDE1B27552700E128B2 /* CommonConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 04545CDD1B27552700E128B2 /* CommonConfig.m */; };
 		04C598591B1C8178004A2FA9 /* ImageScale.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C598581B1C8178004A2FA9 /* ImageScale.m */; };
 		04C5986B1B1C835B004A2FA9 /* FanKuiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C5985C1B1C835B004A2FA9 /* FanKuiViewController.m */; };
 		04C5986C1B1C835B004A2FA9 /* GeRenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C5985E1B1C835B004A2FA9 /* GeRenViewController.m */; };
@@ -123,11 +133,26 @@
 		043667F81B1A0E1A009AC914 /* LightTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LightTextField.m; sourceTree = "<group>"; };
 		043668061B1A1B75009AC914 /* default_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default_icon.png; sourceTree = "<group>"; };
 		043668081B1A2B42009AC914 /* login_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_background.png; sourceTree = "<group>"; };
-		0436680B1B1A3988009AC914 /* LightUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LightUser.h; sourceTree = "<group>"; };
-		0436680C1B1A3988009AC914 /* LightUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LightUser.m; sourceTree = "<group>"; };
+		0436680B1B1A3988009AC914 /* LightUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LightUser.h; path = Models/LightUser.h; sourceTree = "<group>"; };
+		0436680C1B1A3988009AC914 /* LightUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LightUser.m; path = Models/LightUser.m; sourceTree = "<group>"; };
 		0436680E1B1A3FB6009AC914 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		043668101B1A419A009AC914 /* LightRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LightRegisterViewController.h; sourceTree = "<group>"; };
 		043668111B1A419A009AC914 /* LightRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LightRegisterViewController.m; sourceTree = "<group>"; };
+		04545CBB1B2745B500E128B2 /* LightIntroPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LightIntroPage.h; path = "引导页/LightIntroPage.h"; sourceTree = "<group>"; };
+		04545CBC1B2745B500E128B2 /* LightIntroPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LightIntroPage.m; path = "引导页/LightIntroPage.m"; sourceTree = "<group>"; };
+		04545CBE1B27461300E128B2 /* LightIntroView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LightIntroView.h; path = "引导页/LightIntroView.h"; sourceTree = "<group>"; };
+		04545CBF1B27461300E128B2 /* LightIntroView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LightIntroView.m; path = "引导页/LightIntroView.m"; sourceTree = "<group>"; };
+		04545CC11B27467D00E128B2 /* LightIntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LightIntroViewController.h; path = "引导页/LightIntroViewController.h"; sourceTree = "<group>"; };
+		04545CC21B27467D00E128B2 /* LightIntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LightIntroViewController.m; path = "引导页/LightIntroViewController.m"; sourceTree = "<group>"; };
+		04545CCF1B27526C00E128B2 /* Intro01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Intro01.png; path = "引导页/Intro01.png"; sourceTree = "<group>"; };
+		04545CD01B27526C00E128B2 /* Intro02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Intro02.png; path = "引导页/Intro02.png"; sourceTree = "<group>"; };
+		04545CD11B27526C00E128B2 /* Intro03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Intro03.png; path = "引导页/Intro03.png"; sourceTree = "<group>"; };
+		04545CD21B27526C00E128B2 /* Intro04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Intro04.png; path = "引导页/Intro04.png"; sourceTree = "<group>"; };
+		04545CD31B27526C00E128B2 /* Intro05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Intro05.png; path = "引导页/Intro05.png"; sourceTree = "<group>"; };
+		04545CD91B27548C00E128B2 /* LightIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LightIndex.h; path = API/LightIndex.h; sourceTree = "<group>"; };
+		04545CDA1B27548C00E128B2 /* LightIndex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LightIndex.m; path = API/LightIndex.m; sourceTree = "<group>"; };
+		04545CDC1B27552700E128B2 /* CommonConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommonConfig.h; path = Utils/CommonConfig.h; sourceTree = "<group>"; };
+		04545CDD1B27552700E128B2 /* CommonConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommonConfig.m; path = Utils/CommonConfig.m; sourceTree = "<group>"; };
 		04C598571B1C8178004A2FA9 /* ImageScale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageScale.h; sourceTree = "<group>"; };
 		04C598581B1C8178004A2FA9 /* ImageScale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageScale.m; sourceTree = "<group>"; };
 		04C5985B1B1C835B004A2FA9 /* FanKuiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FanKuiViewController.h; sourceTree = "<group>"; };
@@ -158,18 +183,18 @@
 		04C5987D1B1C8368004A2FA9 /* MSGViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSGViewController.m; sourceTree = "<group>"; };
 		04C5987E1B1C8368004A2FA9 /* ReadMoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadMoreViewController.h; sourceTree = "<group>"; };
 		04C5987F1B1C8368004A2FA9 /* ReadMoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadMoreViewController.m; sourceTree = "<group>"; };
-		04C598871B1C8377004A2FA9 /* ChangeEmailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeEmailViewController.h; sourceTree = "<group>"; };
-		04C598881B1C8377004A2FA9 /* ChangeEmailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeEmailViewController.m; sourceTree = "<group>"; };
-		04C598891B1C8377004A2FA9 /* ChangePayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePayViewController.h; sourceTree = "<group>"; };
-		04C5988A1B1C8377004A2FA9 /* ChangePayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePayViewController.m; sourceTree = "<group>"; };
-		04C5988B1B1C8377004A2FA9 /* ChangePwdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePwdViewController.h; sourceTree = "<group>"; };
-		04C5988C1B1C8377004A2FA9 /* ChangePwdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePwdViewController.m; sourceTree = "<group>"; };
-		04C5988D1B1C8377004A2FA9 /* ChangMobileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangMobileViewController.h; sourceTree = "<group>"; };
-		04C5988E1B1C8377004A2FA9 /* ChangMobileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangMobileViewController.m; sourceTree = "<group>"; };
-		04C5988F1B1C8377004A2FA9 /* CPYListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPYListTableViewController.h; sourceTree = "<group>"; };
-		04C598901B1C8377004A2FA9 /* CPYListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPYListTableViewController.m; sourceTree = "<group>"; };
-		04C598911B1C8377004A2FA9 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		04C598921B1C8377004A2FA9 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		04C598871B1C8377004A2FA9 /* ChangeEmailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChangeEmailViewController.h; path = ../MoreFunc/ChangeEmailViewController.h; sourceTree = "<group>"; };
+		04C598881B1C8377004A2FA9 /* ChangeEmailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChangeEmailViewController.m; path = ../MoreFunc/ChangeEmailViewController.m; sourceTree = "<group>"; };
+		04C598891B1C8377004A2FA9 /* ChangePayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChangePayViewController.h; path = ../MoreFunc/ChangePayViewController.h; sourceTree = "<group>"; };
+		04C5988A1B1C8377004A2FA9 /* ChangePayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChangePayViewController.m; path = ../MoreFunc/ChangePayViewController.m; sourceTree = "<group>"; };
+		04C5988B1B1C8377004A2FA9 /* ChangePwdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChangePwdViewController.h; path = ../MoreFunc/ChangePwdViewController.h; sourceTree = "<group>"; };
+		04C5988C1B1C8377004A2FA9 /* ChangePwdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChangePwdViewController.m; path = ../MoreFunc/ChangePwdViewController.m; sourceTree = "<group>"; };
+		04C5988D1B1C8377004A2FA9 /* ChangMobileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChangMobileViewController.h; path = ../MoreFunc/ChangMobileViewController.h; sourceTree = "<group>"; };
+		04C5988E1B1C8377004A2FA9 /* ChangMobileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChangMobileViewController.m; path = ../MoreFunc/ChangMobileViewController.m; sourceTree = "<group>"; };
+		04C5988F1B1C8377004A2FA9 /* CPYListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPYListTableViewController.h; path = ../MoreFunc/CPYListTableViewController.h; sourceTree = "<group>"; };
+		04C598901B1C8377004A2FA9 /* CPYListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPYListTableViewController.m; path = ../MoreFunc/CPYListTableViewController.m; sourceTree = "<group>"; };
+		04C598911B1C8377004A2FA9 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailViewController.h; path = ../MoreFunc/DetailViewController.h; sourceTree = "<group>"; };
+		04C598921B1C8377004A2FA9 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailViewController.m; path = ../MoreFunc/DetailViewController.m; sourceTree = "<group>"; };
 		04C598A31B1CA30A004A2FA9 /* KPY_48*48_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "KPY_48*48_blue.png"; sourceTree = "<group>"; };
 		04C598A41B1CA30A004A2FA9 /* KPY_48*48_grey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "KPY_48*48_grey.png"; sourceTree = "<group>"; };
 		04C598A91B1CA30A004A2FA9 /* love_48*48_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "love_48*48_blue.png"; sourceTree = "<group>"; };
@@ -263,17 +288,14 @@
 		043667931B168952009AC914 /* Light-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				04C598861B1C8377004A2FA9 /* MoreFunc */,
-				04C598731B1C8368004A2FA9 /* MainPage */,
-				04C5985A1B1C835B004A2FA9 /* LeftView */,
 				0436680A1B1A394E009AC914 /* Models */,
+				047038151B273314007B8278 /* Utils */,
+				047038131B2732BE007B8278 /* API */,
+				047038281B2742F3007B8278 /* 引导页 */,
+				043667D11B169B56009AC914 /* 登录&注册 */,
+				04C598731B1C8368004A2FA9 /* 主页面 */,
+				04C5985A1B1C835B004A2FA9 /* LeftView */,
 				043667D71B169B61009AC914 /* resources */,
-				043667D11B169B56009AC914 /* Login&Reg */,
-				043667F61B1A0D9E009AC914 /* ViewsUtils */,
-				043667BE1B168AEF009AC914 /* Knowledge */,
-				043667BD1B168AE6009AC914 /* Love */,
-				043667BC1B168A2C009AC914 /* Accompany */,
-				043667BB1B168A23009AC914 /* Messages */,
 				043667A31B168952009AC914 /* LaunchScreen.xib */,
 				043667EC1B16D9B9009AC914 /* Images.xcassets */,
 				043667941B168952009AC914 /* Supporting Files */,
@@ -309,55 +331,20 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		043667BB1B168A23009AC914 /* Messages */ = {
+		043667D11B169B56009AC914 /* 登录&注册 */ = {
 			isa = PBXGroup;
 			children = (
+				047038161B27339D007B8278 /* 登录 */,
+				047038171B2733C2007B8278 /* 注册 */,
 			);
-			name = Messages;
-			sourceTree = "<group>";
-		};
-		043667BC1B168A2C009AC914 /* Accompany */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Accompany;
-			sourceTree = "<group>";
-		};
-		043667BD1B168AE6009AC914 /* Love */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Love;
-			sourceTree = "<group>";
-		};
-		043667BE1B168AEF009AC914 /* Knowledge */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Knowledge;
-			sourceTree = "<group>";
-		};
-		043667D11B169B56009AC914 /* Login&Reg */ = {
-			isa = PBXGroup;
-			children = (
-				043667D21B169B56009AC914 /* LightLoginViewController.h */,
-				043667D31B169B56009AC914 /* LightLoginViewController.m */,
-				043668101B1A419A009AC914 /* LightRegisterViewController.h */,
-				043668111B1A419A009AC914 /* LightRegisterViewController.m */,
-				04DF61421B1F157D001AD649 /* LightRegCheckViewController.h */,
-				04DF61431B1F157D001AD649 /* LightRegCheckViewController.m */,
-				04DF614A1B1F21A6001AD649 /* LightRegDetailViewController.h */,
-				04DF614B1B1F21A6001AD649 /* LightRegDetailViewController.m */,
-				04DF61451B1F1D9B001AD649 /* LightRegSexViewController.h */,
-				04DF61461B1F1D9B001AD649 /* LightRegSexViewController.m */,
-				04DF61511B1F2668001AD649 /* LightRegSexViewController.xib */,
-			);
+			name = "登录&注册";
 			path = "Login&Reg";
 			sourceTree = "<group>";
 		};
 		043667D71B169B61009AC914 /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				04545CC41B274C4900E128B2 /* 引导页 */,
 				04C5989E1B1CA30A004A2FA9 /* Main */,
 				043667D81B169B61009AC914 /* login&reg */,
 				043667DC1B169B61009AC914 /* operationbox_text@2x.png */,
@@ -391,73 +378,368 @@
 		0436680A1B1A394E009AC914 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				0436680B1B1A3988009AC914 /* LightUser.h */,
-				0436680C1B1A3988009AC914 /* LightUser.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		04C5985A1B1C835B004A2FA9 /* LeftView */ = {
+		04545CC41B274C4900E128B2 /* 引导页 */ = {
 			isa = PBXGroup;
 			children = (
-				04C5985B1B1C835B004A2FA9 /* FanKuiViewController.h */,
-				04C5985C1B1C835B004A2FA9 /* FanKuiViewController.m */,
-				04C5985D1B1C835B004A2FA9 /* GeRenViewController.h */,
-				04C5985E1B1C835B004A2FA9 /* GeRenViewController.m */,
-				04C5985F1B1C835B004A2FA9 /* GuanYuLightViewController.h */,
-				04C598601B1C835B004A2FA9 /* GuanYuLightViewController.m */,
-				04C598611B1C835B004A2FA9 /* GuanYuViewController.h */,
-				04C598621B1C835B004A2FA9 /* GuanYuViewController.m */,
-				04C598631B1C835B004A2FA9 /* JuanZhuViewController.h */,
-				04C598641B1C835B004A2FA9 /* JuanZhuViewController.m */,
-				04C598651B1C835B004A2FA9 /* SheZhiTableViewController.h */,
-				04C598661B1C835B004A2FA9 /* SheZhiTableViewController.m */,
-				04C598671B1C835B004A2FA9 /* TongZhiTableViewController.h */,
-				04C598681B1C835B004A2FA9 /* TongZhiTableViewController.m */,
-				04C598691B1C835B004A2FA9 /* ZhangHuTableViewController.h */,
-				04C5986A1B1C835B004A2FA9 /* ZhangHuTableViewController.m */,
+				04545CCF1B27526C00E128B2 /* Intro01.png */,
+				04545CD01B27526C00E128B2 /* Intro02.png */,
+				04545CD11B27526C00E128B2 /* Intro03.png */,
+				04545CD21B27526C00E128B2 /* Intro04.png */,
+				04545CD31B27526C00E128B2 /* Intro05.png */,
 			);
-			path = LeftView;
+			name = "引导页";
 			sourceTree = "<group>";
 		};
-		04C598731B1C8368004A2FA9 /* MainPage */ = {
+		047038131B2732BE007B8278 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				0436680B1B1A3988009AC914 /* LightUser.h */,
+				0436680C1B1A3988009AC914 /* LightUser.m */,
+				04545CD91B27548C00E128B2 /* LightIndex.h */,
+				04545CDA1B27548C00E128B2 /* LightIndex.m */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		047038151B273314007B8278 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				04545CDC1B27552700E128B2 /* CommonConfig.h */,
+				04545CDD1B27552700E128B2 /* CommonConfig.m */,
+				043667F61B1A0D9E009AC914 /* ViewsUtils */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		047038161B27339D007B8278 /* 登录 */ = {
+			isa = PBXGroup;
+			children = (
+				043667D21B169B56009AC914 /* LightLoginViewController.h */,
+				043667D31B169B56009AC914 /* LightLoginViewController.m */,
+			);
+			name = "登录";
+			sourceTree = "<group>";
+		};
+		047038171B2733C2007B8278 /* 注册 */ = {
+			isa = PBXGroup;
+			children = (
+				043668101B1A419A009AC914 /* LightRegisterViewController.h */,
+				043668111B1A419A009AC914 /* LightRegisterViewController.m */,
+				04DF61421B1F157D001AD649 /* LightRegCheckViewController.h */,
+				04DF61431B1F157D001AD649 /* LightRegCheckViewController.m */,
+				04DF614A1B1F21A6001AD649 /* LightRegDetailViewController.h */,
+				04DF614B1B1F21A6001AD649 /* LightRegDetailViewController.m */,
+				04DF61451B1F1D9B001AD649 /* LightRegSexViewController.h */,
+				04DF61461B1F1D9B001AD649 /* LightRegSexViewController.m */,
+				04DF61511B1F2668001AD649 /* LightRegSexViewController.xib */,
+			);
+			name = "注册";
+			sourceTree = "<group>";
+		};
+		047038181B273417007B8278 /* 首页 */ = {
+			isa = PBXGroup;
+			children = (
+				04C598761B1C8368004A2FA9 /* IndexViewController.h */,
+				04C598771B1C8368004A2FA9 /* IndexViewController.m */,
+			);
+			name = "首页";
+			sourceTree = "<group>";
+		};
+		047038191B273423007B8278 /* 消息 */ = {
+			isa = PBXGroup;
+			children = (
+				047038291B274353007B8278 /* 消息 */,
+				0470382A1B274364007B8278 /* 通讯录 */,
+				0470382B1B274383007B8278 /* 添加好友 */,
+			);
+			name = "消息";
+			sourceTree = "<group>";
+		};
+		0470381A1B273486007B8278 /* 求同 */ = {
 			isa = PBXGroup;
 			children = (
 				04C598741B1C8368004A2FA9 /* CPYTableViewController.h */,
 				04C598751B1C8368004A2FA9 /* CPYTableViewController.m */,
-				04C598761B1C8368004A2FA9 /* IndexViewController.h */,
-				04C598771B1C8368004A2FA9 /* IndexViewController.m */,
-				04C598781B1C8368004A2FA9 /* KDGTableViewController.h */,
-				04C598791B1C8368004A2FA9 /* KDGTableViewController.m */,
-				04C5987A1B1C8368004A2FA9 /* LOVETableViewController.h */,
-				04C5987B1B1C8368004A2FA9 /* LOVETableViewController.m */,
-				04C5987C1B1C8368004A2FA9 /* MSGViewController.h */,
-				04C5987D1B1C8368004A2FA9 /* MSGViewController.m */,
-				04C5987E1B1C8368004A2FA9 /* ReadMoreViewController.h */,
-				04C5987F1B1C8368004A2FA9 /* ReadMoreViewController.m */,
-				04C599061B1CAAC2004A2FA9 /* LightBaseTabController.h */,
-				04C599071B1CAAC2004A2FA9 /* LightBaseTabController.m */,
+				0470382C1B2743BA007B8278 /* 需要人陪 */,
+				0470382D1B274404007B8278 /* Light陪伴师 */,
+				0470382E1B274412007B8278 /* Light心理咨询师 */,
+				0470382F1B274426007B8278 /* Light大师 */,
+				047038301B274436007B8278 /* Light律师 */,
 			);
-			path = MainPage;
+			name = "求同";
 			sourceTree = "<group>";
 		};
-		04C598861B1C8377004A2FA9 /* MoreFunc */ = {
+		0470381B1B273497007B8278 /* 求爱 */ = {
+			isa = PBXGroup;
+			children = (
+				04C5987A1B1C8368004A2FA9 /* LOVETableViewController.h */,
+				04C5987B1B1C8368004A2FA9 /* LOVETableViewController.m */,
+				047038331B274481007B8278 /* 海外结婚 */,
+				047038321B274471007B8278 /* Light证书墙 */,
+				047038311B274468007B8278 /* Light求婚 */,
+			);
+			name = "求爱";
+			sourceTree = "<group>";
+		};
+		0470381C1B27349E007B8278 /* 求知 */ = {
+			isa = PBXGroup;
+			children = (
+				04C598781B1C8368004A2FA9 /* KDGTableViewController.h */,
+				04C598791B1C8368004A2FA9 /* KDGTableViewController.m */,
+				047038351B27449A007B8278 /* Light求职场 */,
+				047038341B274491007B8278 /* 学术技能交换 */,
+			);
+			name = "求知";
+			sourceTree = "<group>";
+		};
+		0470381D1B273FA1007B8278 /* 个人（大头像） */ = {
+			isa = PBXGroup;
+			children = (
+				04C5985D1B1C835B004A2FA9 /* GeRenViewController.h */,
+				04C5985E1B1C835B004A2FA9 /* GeRenViewController.m */,
+			);
+			name = "个人（大头像）";
+			sourceTree = "<group>";
+		};
+		0470381E1B273FF5007B8278 /* 通知 */ = {
+			isa = PBXGroup;
+			children = (
+				04C598671B1C835B004A2FA9 /* TongZhiTableViewController.h */,
+				04C598681B1C835B004A2FA9 /* TongZhiTableViewController.m */,
+			);
+			name = "通知";
+			sourceTree = "<group>";
+		};
+		0470381F1B274004007B8278 /* 账户 */ = {
+			isa = PBXGroup;
+			children = (
+				047038251B2741DD007B8278 /* 账户绑定 */,
+				047038261B2741E5007B8278 /* 密码 */,
+				047038271B2741EB007B8278 /* 支付方式 */,
+				04C598691B1C835B004A2FA9 /* ZhangHuTableViewController.h */,
+				04C5986A1B1C835B004A2FA9 /* ZhangHuTableViewController.m */,
+			);
+			name = "账户";
+			sourceTree = "<group>";
+		};
+		047038201B27400C007B8278 /* 设置 */ = {
+			isa = PBXGroup;
+			children = (
+				04C598651B1C835B004A2FA9 /* SheZhiTableViewController.h */,
+				04C598661B1C835B004A2FA9 /* SheZhiTableViewController.m */,
+			);
+			name = "设置";
+			sourceTree = "<group>";
+		};
+		047038211B274012007B8278 /* 反馈 */ = {
+			isa = PBXGroup;
+			children = (
+				04C5985B1B1C835B004A2FA9 /* FanKuiViewController.h */,
+				04C5985C1B1C835B004A2FA9 /* FanKuiViewController.m */,
+			);
+			name = "反馈";
+			sourceTree = "<group>";
+		};
+		047038221B274018007B8278 /* 关于 */ = {
+			isa = PBXGroup;
+			children = (
+				04C598611B1C835B004A2FA9 /* GuanYuViewController.h */,
+				04C598621B1C835B004A2FA9 /* GuanYuViewController.m */,
+				047038231B2740AA007B8278 /* 关于Light */,
+				047038241B27412F007B8278 /* 捐助 */,
+			);
+			name = "关于";
+			sourceTree = "<group>";
+		};
+		047038231B2740AA007B8278 /* 关于Light */ = {
+			isa = PBXGroup;
+			children = (
+				04C5985F1B1C835B004A2FA9 /* GuanYuLightViewController.h */,
+				04C598601B1C835B004A2FA9 /* GuanYuLightViewController.m */,
+			);
+			name = "关于Light";
+			sourceTree = "<group>";
+		};
+		047038241B27412F007B8278 /* 捐助 */ = {
+			isa = PBXGroup;
+			children = (
+				04C598631B1C835B004A2FA9 /* JuanZhuViewController.h */,
+				04C598641B1C835B004A2FA9 /* JuanZhuViewController.m */,
+			);
+			name = "捐助";
+			sourceTree = "<group>";
+		};
+		047038251B2741DD007B8278 /* 账户绑定 */ = {
 			isa = PBXGroup;
 			children = (
 				04C598871B1C8377004A2FA9 /* ChangeEmailViewController.h */,
 				04C598881B1C8377004A2FA9 /* ChangeEmailViewController.m */,
-				04C598891B1C8377004A2FA9 /* ChangePayViewController.h */,
-				04C5988A1B1C8377004A2FA9 /* ChangePayViewController.m */,
-				04C5988B1B1C8377004A2FA9 /* ChangePwdViewController.h */,
-				04C5988C1B1C8377004A2FA9 /* ChangePwdViewController.m */,
 				04C5988D1B1C8377004A2FA9 /* ChangMobileViewController.h */,
 				04C5988E1B1C8377004A2FA9 /* ChangMobileViewController.m */,
+			);
+			name = "账户绑定";
+			sourceTree = "<group>";
+		};
+		047038261B2741E5007B8278 /* 密码 */ = {
+			isa = PBXGroup;
+			children = (
+				04C5988B1B1C8377004A2FA9 /* ChangePwdViewController.h */,
+				04C5988C1B1C8377004A2FA9 /* ChangePwdViewController.m */,
+			);
+			name = "密码";
+			sourceTree = "<group>";
+		};
+		047038271B2741EB007B8278 /* 支付方式 */ = {
+			isa = PBXGroup;
+			children = (
+				04C598891B1C8377004A2FA9 /* ChangePayViewController.h */,
+				04C5988A1B1C8377004A2FA9 /* ChangePayViewController.m */,
+			);
+			name = "支付方式";
+			sourceTree = "<group>";
+		};
+		047038281B2742F3007B8278 /* 引导页 */ = {
+			isa = PBXGroup;
+			children = (
+				04545CC11B27467D00E128B2 /* LightIntroViewController.h */,
+				04545CC21B27467D00E128B2 /* LightIntroViewController.m */,
+				04545CBE1B27461300E128B2 /* LightIntroView.h */,
+				04545CBF1B27461300E128B2 /* LightIntroView.m */,
+				04545CBB1B2745B500E128B2 /* LightIntroPage.h */,
+				04545CBC1B2745B500E128B2 /* LightIntroPage.m */,
+			);
+			name = "引导页";
+			sourceTree = "<group>";
+		};
+		047038291B274353007B8278 /* 消息 */ = {
+			isa = PBXGroup;
+			children = (
+				04C5987C1B1C8368004A2FA9 /* MSGViewController.h */,
+				04C5987D1B1C8368004A2FA9 /* MSGViewController.m */,
+			);
+			name = "消息";
+			sourceTree = "<group>";
+		};
+		0470382A1B274364007B8278 /* 通讯录 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "通讯录";
+			sourceTree = "<group>";
+		};
+		0470382B1B274383007B8278 /* 添加好友 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "添加好友";
+			sourceTree = "<group>";
+		};
+		0470382C1B2743BA007B8278 /* 需要人陪 */ = {
+			isa = PBXGroup;
+			children = (
 				04C5988F1B1C8377004A2FA9 /* CPYListTableViewController.h */,
 				04C598901B1C8377004A2FA9 /* CPYListTableViewController.m */,
 				04C598911B1C8377004A2FA9 /* DetailViewController.h */,
 				04C598921B1C8377004A2FA9 /* DetailViewController.m */,
 			);
-			path = MoreFunc;
+			name = "需要人陪";
+			sourceTree = "<group>";
+		};
+		0470382D1B274404007B8278 /* Light陪伴师 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Light陪伴师";
+			sourceTree = "<group>";
+		};
+		0470382E1B274412007B8278 /* Light心理咨询师 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Light心理咨询师";
+			sourceTree = "<group>";
+		};
+		0470382F1B274426007B8278 /* Light大师 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Light大师";
+			sourceTree = "<group>";
+		};
+		047038301B274436007B8278 /* Light律师 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Light律师";
+			sourceTree = "<group>";
+		};
+		047038311B274468007B8278 /* Light求婚 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Light求婚";
+			sourceTree = "<group>";
+		};
+		047038321B274471007B8278 /* Light证书墙 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Light证书墙";
+			sourceTree = "<group>";
+		};
+		047038331B274481007B8278 /* 海外结婚 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "海外结婚";
+			sourceTree = "<group>";
+		};
+		047038341B274491007B8278 /* 学术技能交换 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "学术技能交换";
+			sourceTree = "<group>";
+		};
+		047038351B27449A007B8278 /* Light求职场 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Light求职场";
+			sourceTree = "<group>";
+		};
+		04C5985A1B1C835B004A2FA9 /* LeftView */ = {
+			isa = PBXGroup;
+			children = (
+				0470381D1B273FA1007B8278 /* 个人（大头像） */,
+				0470381E1B273FF5007B8278 /* 通知 */,
+				0470381F1B274004007B8278 /* 账户 */,
+				047038201B27400C007B8278 /* 设置 */,
+				047038211B274012007B8278 /* 反馈 */,
+				047038221B274018007B8278 /* 关于 */,
+			);
+			path = LeftView;
+			sourceTree = "<group>";
+		};
+		04C598731B1C8368004A2FA9 /* 主页面 */ = {
+			isa = PBXGroup;
+			children = (
+				04C599061B1CAAC2004A2FA9 /* LightBaseTabController.h */,
+				04C599071B1CAAC2004A2FA9 /* LightBaseTabController.m */,
+				047038181B273417007B8278 /* 首页 */,
+				047038191B273423007B8278 /* 消息 */,
+				0470381A1B273486007B8278 /* 求同 */,
+				0470381B1B273497007B8278 /* 求爱 */,
+				0470381C1B27349E007B8278 /* 求知 */,
+				04C5987E1B1C8368004A2FA9 /* ReadMoreViewController.h */,
+				04C5987F1B1C8368004A2FA9 /* ReadMoreViewController.m */,
+			);
+			name = "主页面";
+			path = MainPage;
 			sourceTree = "<group>";
 		};
 		04C5989E1B1CA30A004A2FA9 /* Main */ = {
@@ -580,11 +862,13 @@
 			files = (
 				04C598C81B1CA30A004A2FA9 /* love_48*48_grey.png in Resources */,
 				04C598C21B1CA30A004A2FA9 /* KPY_48*48_grey.png in Resources */,
+				04545CD61B27526C00E128B2 /* Intro03.png in Resources */,
 				04C599001B1CA55E004A2FA9 /* love_32*32_blue.png in Resources */,
 				04C599021B1CA55E004A2FA9 /* love_32*32_grey.png in Resources */,
 				04C598F71B1CA55E004A2FA9 /* KPY_24*24_blue.png in Resources */,
 				04C598F11B1CA55E004A2FA9 /* index_24*24_grey.png in Resources */,
 				04C598CD1B1CA30A004A2FA9 /* KDG_48*48_blue.png in Resources */,
+				04545CD41B27526C00E128B2 /* Intro01.png in Resources */,
 				04C599011B1CA55E004A2FA9 /* love_24*24_grey.png in Resources */,
 				04C598DA1B1CA30A004A2FA9 /* index_48*48_grey.png in Resources */,
 				04C5990A1B1CB286004A2FA9 /* left_view.png in Resources */,
@@ -602,6 +886,8 @@
 				04C598D41B1CA30A004A2FA9 /* MSG_48*48_grey.png in Resources */,
 				04C598FD1B1CA55E004A2FA9 /* MSG_24*24_blue.png in Resources */,
 				04C598F81B1CA55E004A2FA9 /* KPY_32*32_blue.png in Resources */,
+				04545CD81B27526C00E128B2 /* Intro05.png in Resources */,
+				04545CD71B27526C00E128B2 /* Intro04.png in Resources */,
 				043667ED1B16D9B9009AC914 /* Images.xcassets in Resources */,
 				04C598FA1B1CA55E004A2FA9 /* KPY_32*32_grey.png in Resources */,
 				04C598F31B1CA55E004A2FA9 /* KDG_24*24_grey.png in Resources */,
@@ -615,6 +901,7 @@
 				04C598F41B1CA55E004A2FA9 /* KDG_32*32_grey.png in Resources */,
 				04DF61521B1F2668001AD649 /* LightRegSexViewController.xib in Resources */,
 				04C598EF1B1CA55E004A2FA9 /* index_32*32_blue.png in Resources */,
+				04545CD51B27526C00E128B2 /* Intro02.png in Resources */,
 				04C598F61B1CA55E004A2FA9 /* KDG_32*32_blue.png in Resources */,
 				043668091B1A2B42009AC914 /* login_background.png in Resources */,
 				04C598F01B1CA55E004A2FA9 /* index_24*24_blue.png in Resources */,
@@ -643,12 +930,15 @@
 				04C598821B1C8368004A2FA9 /* KDGTableViewController.m in Sources */,
 				04C598841B1C8368004A2FA9 /* MSGViewController.m in Sources */,
 				04C5986F1B1C835B004A2FA9 /* JuanZhuViewController.m in Sources */,
+				04545CC01B27461300E128B2 /* LightIntroView.m in Sources */,
 				043667D51B169B56009AC914 /* LightLoginViewController.m in Sources */,
 				04C598961B1C8377004A2FA9 /* ChangMobileViewController.m in Sources */,
 				04C5986D1B1C835B004A2FA9 /* GuanYuLightViewController.m in Sources */,
 				04DF61441B1F157D001AD649 /* LightRegCheckViewController.m in Sources */,
+				04545CBD1B2745B500E128B2 /* LightIntroPage.m in Sources */,
 				04C598711B1C835B004A2FA9 /* TongZhiTableViewController.m in Sources */,
 				04C598801B1C8368004A2FA9 /* CPYTableViewController.m in Sources */,
+				04545CDB1B27548C00E128B2 /* LightIndex.m in Sources */,
 				0436680D1B1A3988009AC914 /* LightUser.m in Sources */,
 				04C598931B1C8377004A2FA9 /* ChangeEmailViewController.m in Sources */,
 				04C598701B1C835B004A2FA9 /* SheZhiTableViewController.m in Sources */,
@@ -656,9 +946,11 @@
 				0436679A1B168952009AC914 /* AppDelegate.m in Sources */,
 				04C598851B1C8368004A2FA9 /* ReadMoreViewController.m in Sources */,
 				04DF61481B1F1D9B001AD649 /* LightRegSexViewController.m in Sources */,
+				04545CDE1B27552700E128B2 /* CommonConfig.m in Sources */,
 				04C598591B1C8178004A2FA9 /* ImageScale.m in Sources */,
 				043668121B1A419A009AC914 /* LightRegisterViewController.m in Sources */,
 				04C5986C1B1C835B004A2FA9 /* GeRenViewController.m in Sources */,
+				04545CC31B27467D00E128B2 /* LightIntroViewController.m in Sources */,
 				04C5986B1B1C835B004A2FA9 /* FanKuiViewController.m in Sources */,
 				04C598941B1C8377004A2FA9 /* ChangePayViewController.m in Sources */,
 				04C598951B1C8377004A2FA9 /* ChangePwdViewController.m in Sources */,

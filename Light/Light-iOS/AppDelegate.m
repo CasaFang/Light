@@ -14,6 +14,7 @@
 #import "LOVETableViewController.h"
 #import "KDGTableViewController.h"
 #import "LightBaseTabController.h"
+#import "LightIntroViewController.h"
 #import <SMS_SDK/SMS_SDK.h>
 
 #define LightKey @"7f64aa39090d"
@@ -39,7 +40,8 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] ;
     
     // Override point for customization after application launch.
-    [self toLogin];
+    [self toIntro];
+//    [self toLogin];
 //    [self toMain];
     
     self.window.backgroundColor = [UIColor whiteColor];
@@ -71,6 +73,13 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+-(void)toIntro {
+    LightIntroViewController *intro = [[LightIntroViewController alloc]init];
+    
+    self.window.rootViewController = intro;
+
+}
+
 -(void)toLogin {
     
     LightLoginViewController *loginView=[[LightLoginViewController alloc]init] ;
@@ -92,7 +101,6 @@
     
     main=[[UITabBarController alloc]init];
     
-    LightBaseTabController *base = [[LightBaseTabController alloc]init];
     
 
     main.viewControllers=[NSArray arrayWithObjects:index,message, company,love,knowdge,nil];
