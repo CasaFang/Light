@@ -97,13 +97,39 @@
         [_continueButton setBackgroundImage:[[UIImage imageNamed:@"blue_login_normal"]stretchableImageWithLeftCapWidth:10 topCapHeight:15 ] forState:UIControlStateNormal];
         [_continueButton setBackgroundImage:[[UIImage imageNamed:@"blue_login_disable"] stretchableImageWithLeftCapWidth:10 topCapHeight:15 ] forState:UIControlStateDisabled];
         [_continueButton setBackgroundImage:[[UIImage imageNamed:@"blue_login_highlight"]stretchableImageWithLeftCapWidth:10 topCapHeight:15 ] forState:UIControlStateHighlighted];
-        _continueButton.enabled = YES;
+        /*
+        if([self.banner.text isEqualToString:@"请输入电子邮箱:"]){
+            if ([LightRegisterViewController validateEmail:self.registerNum.text]) {
+                _continueButton.tag = 1;
+                _continueButton.enabled = YES;
+            }else{
+                if(![self.registerNum.text isEqualToString:@""]){
+                    UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Wrong" message:@"您输入的邮箱格式有误" delegate:self cancelButtonTitle:NSLocalizedString(@"cancel", nil) otherButtonTitles:NSLocalizedString(@"sure",nil), nil];
+                    [alert show];
+                }
+            }
+        }else{
+            if([LightRegisterViewController validatePhone:self.registerNum.text]){
+                _continueButton.tag = 2;
+                _continueButton.enabled = YES;
+            }else{
+                if(![self.registerNum.text isEqualToString:@""]){
+                    UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Wrong" message:@"您输入的邮箱格式有误" delegate:self cancelButtonTitle:NSLocalizedString(@"cancel", nil) otherButtonTitles:NSLocalizedString(@"sure",nil), nil];
+                    [alert show];
+                }
+            }
+            
+        }
+         */
+        _continueButton.enabled=YES;
         [_continueButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [_continueButton addTarget:self action:@selector(toContinue:) forControlEvents:UIControlEventTouchUpInside];
 
     }
     return _continueButton;
 }
+
+
 
 -(UIButton *)registerButton{
     if(_registerButton == nil){
@@ -157,7 +183,44 @@
     }
 }
 
--(void)toContinue:(id)sender{
++(BOOL) validatePhone:(NSString *)registerStr
+{
+    NSString *phoneRegex = @"^[1][3,4,5,7,8][0-9]{9}$";
+    NSPredicate *phoneTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", phoneRegex];
+    if([phoneTest evaluateWithObject:registerStr]){
+        return YES;
+    }
+    else{
+        return NO;
+    }
+}
+
+-(void)toContinue:(UIButton *) type{
+    NSDate *date = [NSDate date];
+    NSDateFormatter *dateFormatter = [[[NSDateFormatter alloc] init] autorelease];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    
+    if([self.banner.text isEqualToString:@"请输入电子邮箱:"]){
+        if ([LightRegisterViewController validateEmail:self.registerNum.text]) {
+            _continueButton.tag = 1;
+        }else{
+            if(![self.registerNum.text isEqualToString:@""]){
+                UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Wrong" message:@"您输入的邮箱格式有误" delegate:self cancelButtonTitle:NSLocalizedString(@"返回", nil) otherButtonTitles:NSLocalizedString(@"确定",nil), nil];
+                [alert show];
+            }
+        }
+    }else{
+        if([LightRegisterViewController validatePhone:self.registerNum.text]){
+            _continueButton.tag = 2;
+        }else{
+            if(![self.registerNum.text isEqualToString:@""]){
+                UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Wrong" message:@"您输入的手机号格式有误" delegate:self cancelButtonTitle:NSLocalizedString(@"返回", nil) otherButtonTitles:NSLocalizedString(@"确定",nil), nil];
+                [alert show];
+            }
+        }
+    }
+    
+    LightRegCheckViewController *check = [[LightRegCheckViewController alloc]init];
     NSDictionary *registerDictionary = [NSDictionary dictionaryWithObjectsAndKeys:self.registerNum.text,@"code", nil];
     NSError * error;
     NSLog(@"registerDictionary is %@",registerDictionary);
@@ -176,6 +239,8 @@
     [requst setHTTPBody:tempJsonData];
     NSOperationQueue *queue = [NSOperationQueue mainQueue];
     [NSURLConnection sendAsynchronousRequest:requst queue:queue completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+        NSString *jsonDate = [dateFormatter stringFromDate:[NSDate date]];
+        NSLog(@"获取json的时间：%@",jsonDate);
         if(data){
             NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
             NSString *error1 = dict[@"error"];
@@ -186,17 +251,23 @@
                 
                 [[UIApplication sharedApplication] setStatusBarHidden:NO];
                 
-                if([LightRegisterViewController validateEmail:self.registerNum.text]){
-                    LightRegCheckViewController *check = [[LightRegCheckViewController alloc]init];
+                if(type.tag == 1){
+
                     check.userId = userId;
                     check.type= @"email";
                     [self.navigationController pushViewController:check animated:YES];
                 }
                 else{
+                    NSString *getBegin = [dateFormatter stringFromDate:[NSDate date]];
+                    NSLog(@"获得验证码的时间:%@",getBegin);
+                    NSLog(@"开始请求手机验证码时间：%@",getBegin);
+
                     [SMS_SDK getVerificationCodeBySMSWithPhone:self.registerNum.text zone:@"86" result:^(SMS_SDKError *error) {
                         if(!error){
+                            NSString *getCheckNum = [dateFormatter stringFromDate:[NSDate date]];
+                            NSLog(@"获得验证码的时间:%@",getCheckNum);
                             [[UIApplication sharedApplication] setStatusBarHidden:NO];
-                            LightRegCheckViewController *check = [[LightRegCheckViewController alloc]init];
+                            check.userId = userId;
                             check.type = @"phone";
                             [self.navigationController pushViewController:check animated:YES];
                         }
