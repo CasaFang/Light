@@ -8,7 +8,7 @@
 
 #import "LightRegSexViewController.h"
 #import "AppDelegate.h"
-#define RegisterURL @"http://123.57.221.116:8080/light-server/intf/user/addInfo.shtml"
+#import "LightAPI.h"
 
 @interface LightRegSexViewController ()
 @property (retain, nonatomic) IBOutlet UILabel *biometricSexText;
@@ -35,9 +35,11 @@
     }
     return self;
 }
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+
     [self.navigationItem setTitle:@"注册"];
     self.view.frame = CGRectMake(0, 0, CGRectGetWidth([UIScreen mainScreen].bounds), CGRectGetHeight([UIScreen mainScreen].bounds));
     
@@ -57,6 +59,7 @@
     [self.view addSubview:self.psyFemaleButton];
 }
 
+#pragma mark - about subviews
 -(UIImageView *)backgroundImageView{
     if(_backgroundImageView==nil){
         _backgroundImageView = [[UIImageView alloc]initWithFrame:self.view.frame];
@@ -65,32 +68,33 @@
     return _backgroundImageView;
 }
 
-
 -(UIButton *)bioMaleButton {
     [_bioMaleButton setBackgroundImage:[[UIImage imageNamed:@"blue_login_normal"]stretchableImageWithLeftCapWidth:10 topCapHeight:15 ] forState:UIControlStateNormal];
     [_bioMaleButton setBackgroundImage:[[UIImage imageNamed:@"blue_login_disable"] stretchableImageWithLeftCapWidth:10 topCapHeight:15 ]  forState:UIControlStateDisabled];
     [_bioMaleButton setBackgroundImage:[[UIImage imageNamed:@"blue_login_highlight"]stretchableImageWithLeftCapWidth:10 topCapHeight:15 ] forState:UIControlStateHighlighted];
-    _bioMaleButton.tag = @"1";
+    _bioMaleButton.tag = 1;
     _bioMaleButton.enabled = YES;
     [_bioMaleButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [_bioMaleButton addTarget:self action:@selector(choseBio:) forControlEvents:UIControlEventTouchUpInside];
     return _bioMaleButton;
 }
+
 -(UIButton *)bioFemaleButton {
     [_bioFemaleButton setBackgroundImage:[[UIImage imageNamed:@"blue_login_normal"]stretchableImageWithLeftCapWidth:10 topCapHeight:15 ] forState:UIControlStateNormal];
     [_bioFemaleButton setBackgroundImage:[[UIImage imageNamed:@"blue_login_disable"] stretchableImageWithLeftCapWidth:10 topCapHeight:15 ]  forState:UIControlStateDisabled];
     [_bioFemaleButton setBackgroundImage:[[UIImage imageNamed:@"blue_login_highlight"]stretchableImageWithLeftCapWidth:10 topCapHeight:15 ] forState:UIControlStateHighlighted];
-    _bioFemaleButton.tag = @"0";
+    _bioFemaleButton.tag = 0;
     _bioFemaleButton.enabled = YES;
     [_bioFemaleButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [_bioFemaleButton addTarget:self action:@selector(choseBio:) forControlEvents:UIControlEventTouchUpInside];
     return _bioFemaleButton;
 }
+
 -(UIButton *)bioOtherButton {
     [_bioOtherButton setBackgroundImage:[[UIImage imageNamed:@"blue_login_normal"]stretchableImageWithLeftCapWidth:10 topCapHeight:15 ] forState:UIControlStateNormal];
     [_bioOtherButton setBackgroundImage:[[UIImage imageNamed:@"blue_login_disable"] stretchableImageWithLeftCapWidth:10 topCapHeight:15 ]  forState:UIControlStateDisabled];
     [_bioOtherButton setBackgroundImage:[[UIImage imageNamed:@"blue_login_highlight"]stretchableImageWithLeftCapWidth:10 topCapHeight:15 ] forState:UIControlStateHighlighted];
-    _bioOtherButton.tag = @"2";
+    _bioOtherButton.tag = 2;
     _bioOtherButton.enabled = YES;
     [_bioOtherButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [_bioOtherButton addTarget:self action:@selector(choseBio:) forControlEvents:UIControlEventTouchUpInside];
@@ -101,7 +105,7 @@
     [_psyMaleButton setBackgroundImage:[[UIImage imageNamed:@"blue_login_normal"]stretchableImageWithLeftCapWidth:10 topCapHeight:15 ] forState:UIControlStateNormal];
     [_psyMaleButton setBackgroundImage:[[UIImage imageNamed:@"blue_login_disable"] stretchableImageWithLeftCapWidth:10 topCapHeight:15 ]  forState:UIControlStateDisabled];
     [_psyMaleButton setBackgroundImage:[[UIImage imageNamed:@"blue_login_highlight"]stretchableImageWithLeftCapWidth:10 topCapHeight:15 ] forState:UIControlStateHighlighted];
-    _psyMaleButton.tag=@"1";
+    _psyMaleButton.tag=1;
     _psyMaleButton.enabled = YES;
     [_psyMaleButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [_psyMaleButton addTarget:self action:@selector(chosePsy:) forControlEvents:UIControlEventTouchUpInside];
@@ -111,7 +115,7 @@
     [_psyFemaleButton setBackgroundImage:[[UIImage imageNamed:@"blue_login_normal"]stretchableImageWithLeftCapWidth:10 topCapHeight:15 ] forState:UIControlStateNormal];
     [_psyFemaleButton setBackgroundImage:[[UIImage imageNamed:@"blue_login_disable"] stretchableImageWithLeftCapWidth:10 topCapHeight:15 ]  forState:UIControlStateDisabled];
     [_psyFemaleButton setBackgroundImage:[[UIImage imageNamed:@"blue_login_highlight"]stretchableImageWithLeftCapWidth:10 topCapHeight:15 ] forState:UIControlStateHighlighted];
-    _psyFemaleButton.tag=@"0";
+    _psyFemaleButton.tag=0;
     _psyFemaleButton.enabled = YES;
     [_psyFemaleButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [_psyFemaleButton addTarget:self action:@selector(chosePsy:) forControlEvents:UIControlEventTouchUpInside];
@@ -121,13 +125,14 @@
     [_psyOtherButton setBackgroundImage:[[UIImage imageNamed:@"blue_login_normal"]stretchableImageWithLeftCapWidth:10 topCapHeight:15 ] forState:UIControlStateNormal];
     [_psyOtherButton setBackgroundImage:[[UIImage imageNamed:@"blue_login_disable"] stretchableImageWithLeftCapWidth:10 topCapHeight:15 ]  forState:UIControlStateDisabled];
     [_psyOtherButton setBackgroundImage:[[UIImage imageNamed:@"blue_login_highlight"]stretchableImageWithLeftCapWidth:10 topCapHeight:15 ] forState:UIControlStateHighlighted];
-    _psyOtherButton.tag=@"2";
+    _psyOtherButton.tag=2;
     _psyOtherButton.enabled = YES;
     [_psyOtherButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [_psyOtherButton addTarget:self action:@selector(chosePsy:) forControlEvents:UIControlEventTouchUpInside];
     return _psyOtherButton;
 }
 
+#pragma mark - Button Action
 -(void)choseBio: (UIButton *)btn {
     NSDictionary *registerDictionary = [NSDictionary dictionaryWithObjectsAndKeys:self.userId,@"user_id",self.nickname,@"name",self.password,@"pwd",btn.tag,@"physiology_gender", nil];
     NSError * error;
@@ -138,7 +143,7 @@
     
     NSMutableData *tempJsonData = [NSMutableData dataWithData:jsonData];
     
-    NSURL *url = [NSURL URLWithString:RegisterURL];
+    NSURL *url = [NSURL URLWithString:RegisterDetailURL];
     
     NSMutableURLRequest *requst = [NSMutableURLRequest requestWithURL:url];
     
@@ -151,7 +156,7 @@
             NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
             NSString *error1 = dict[@"error"];
             if(error1){
-                NSLog(error1);
+                NSLog(@"服务器请求失败,错误为:%@",error1);
             }
             else
             {
@@ -182,7 +187,7 @@
     
     NSMutableData *tempJsonData = [NSMutableData dataWithData:jsonData];
     
-    NSURL *url = [NSURL URLWithString:RegisterURL];
+    NSURL *url = [NSURL URLWithString:RegisterDetailURL];
     
     NSMutableURLRequest *requst = [NSMutableURLRequest requestWithURL:url];
     
@@ -195,7 +200,7 @@
             NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
             NSString *error1 = dict[@"error"];
             if(error1){
-                NSLog(error1);
+                NSLog(@"服务器请求失败,错误为:%@",error1);
             }
             else
             {
@@ -211,27 +216,12 @@
             NSLog(@"connection error");
         }
     }];
-    
-    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+#pragma mark - keyboard Action
 -(void)closeKeyboard:(id)sender{
     [self.view endEditing:YES];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 
 @end

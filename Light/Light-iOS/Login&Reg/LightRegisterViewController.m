@@ -9,9 +9,9 @@
 #import "LightRegisterViewController.h"
 #import "LightTextField.h"
 #import "LightRegCheckViewController.h"
+#import "LightAPI.h"
 #import <SMS_SDK/SMS_SDK.h>
 
-#define RegisterURL @"http://123.57.221.116:8080/light-server/intf/user/register.shtml"
 
 @interface LightRegisterViewController ()
 
@@ -24,6 +24,7 @@
 
 +(BOOL) validateEmail:(NSString *)registerStr;
 @end
+
 
 @implementation LightRegisterViewController
 
@@ -56,6 +57,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - about subviews
 -(UIImageView *)backgroundImageView{
     if(_backgroundImageView==nil){
         _backgroundImageView = [[UIImageView alloc]initWithFrame:self.view.frame];
@@ -82,7 +84,6 @@
         _registerNum.background=[[UIImage imageNamed:@"operationbox_text"]stretchableImageWithLeftCapWidth:10 topCapHeight:15];
         _registerNum.horizontalPadding = TextFieldPadding;
         _registerNum.verticalPadding = TextFieldPadding;
-        _registerNum.delegate = self;
         _registerNum.returnKeyType = UIReturnKeyDefault;
         _registerNum.clearButtonMode = UITextFieldViewModeWhileEditing;
     }
@@ -97,30 +98,6 @@
         [_continueButton setBackgroundImage:[[UIImage imageNamed:@"blue_login_normal"]stretchableImageWithLeftCapWidth:10 topCapHeight:15 ] forState:UIControlStateNormal];
         [_continueButton setBackgroundImage:[[UIImage imageNamed:@"blue_login_disable"] stretchableImageWithLeftCapWidth:10 topCapHeight:15 ] forState:UIControlStateDisabled];
         [_continueButton setBackgroundImage:[[UIImage imageNamed:@"blue_login_highlight"]stretchableImageWithLeftCapWidth:10 topCapHeight:15 ] forState:UIControlStateHighlighted];
-        /*
-        if([self.banner.text isEqualToString:@"请输入电子邮箱:"]){
-            if ([LightRegisterViewController validateEmail:self.registerNum.text]) {
-                _continueButton.tag = 1;
-                _continueButton.enabled = YES;
-            }else{
-                if(![self.registerNum.text isEqualToString:@""]){
-                    UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Wrong" message:@"您输入的邮箱格式有误" delegate:self cancelButtonTitle:NSLocalizedString(@"cancel", nil) otherButtonTitles:NSLocalizedString(@"sure",nil), nil];
-                    [alert show];
-                }
-            }
-        }else{
-            if([LightRegisterViewController validatePhone:self.registerNum.text]){
-                _continueButton.tag = 2;
-                _continueButton.enabled = YES;
-            }else{
-                if(![self.registerNum.text isEqualToString:@""]){
-                    UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Wrong" message:@"您输入的邮箱格式有误" delegate:self cancelButtonTitle:NSLocalizedString(@"cancel", nil) otherButtonTitles:NSLocalizedString(@"sure",nil), nil];
-                    [alert show];
-                }
-            }
-            
-        }
-         */
         _continueButton.enabled=YES;
         [_continueButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [_continueButton addTarget:self action:@selector(toContinue:) forControlEvents:UIControlEventTouchUpInside];
@@ -142,7 +119,7 @@
             [_registerButton setTitle:@"使用手机号注册" forState:UIControlStateNormal];
             _registerButton.tag = 2;
         }
-        NSLog(_registerButton.titleLabel.text);
+        NSLog(@"注册按钮的文字为：%@",_registerButton.titleLabel.text);
         [_registerButton setBackgroundImage:[[UIImage imageNamed:@"blue_login_normal"]stretchableImageWithLeftCapWidth:10 topCapHeight:15 ] forState:UIControlStateNormal];
         [_registerButton setBackgroundImage:[[UIImage imageNamed:@"blue_login_disable"] stretchableImageWithLeftCapWidth:10 topCapHeight:15 ] forState:UIControlStateDisabled];
         [_registerButton setBackgroundImage:[[UIImage imageNamed:@"blue_login_highlight"]stretchableImageWithLeftCapWidth:10 topCapHeight:15 ] forState:UIControlStateHighlighted];
@@ -171,6 +148,7 @@
     return _haveAccountButton;
 }
 
+#pragma mark - about checkMethods
 +(BOOL) validateEmail:(NSString *)registerStr
 {
     NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
@@ -195,6 +173,8 @@
     }
 }
 
+
+#pragma mark - about Button Action
 -(void)toContinue:(UIButton *) type{
     NSDate *date = [NSDate date];
     NSDateFormatter *dateFormatter = [[[NSDateFormatter alloc] init] autorelease];
@@ -230,7 +210,7 @@
     
     NSMutableData *tempJsonData = [NSMutableData dataWithData:jsonData];
     
-    NSURL *url = [NSURL URLWithString:RegisterURL];
+    NSURL *url = [NSURL URLWithString:RegisterUIDURL];
     
     NSMutableURLRequest *requst = [NSMutableURLRequest requestWithURL:url];
     
@@ -253,10 +233,7 @@
                 check.userId = userId;
                 [self.navigationController pushViewController:check animated:NO];
                 if(type.tag == 1){
-
-//                    check.userId = userId;
                     check.type= @"email";
-//                    [self.navigationController pushViewController:check animated:YES];
                 }
                 else{
                     NSString *getBegin = [dateFormatter stringFromDate:[NSDate date]];
@@ -268,9 +245,7 @@
                             NSString *getCheckNum = [dateFormatter stringFromDate:[NSDate date]];
                             NSLog(@"获得验证码的时间:%@",getCheckNum);
                             [[UIApplication sharedApplication] setStatusBarHidden:NO];
-//                            check.userId = userId;
                             check.type = @"phone";
-//                            [self.navigationController pushViewController:check animated:YES];
                         }
                     }];
                 }
@@ -303,20 +278,10 @@
     }
 }
 
-
+#pragma mark - keyboard Action
 -(void)closeKeyboard:(id)sender{
     [self.view endEditing:YES];
 }
 
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

@@ -12,8 +12,7 @@
 #import "AppDelegate.h"
 #import "LightBaseTabController.h"
 #import "LightUser.h"
-
-#define LightURL @"http://123.57.221.116:8080/light-server/intf/user/login.shtml"
+#import "LightAPI.h"
 
 
 @interface LightLoginViewController () <UITextFieldDelegate,LightLoginDelegate>
@@ -61,16 +60,6 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     _originOffset = self.view.frame.origin;
-    /*
-    [self.view addSubview:self.backgroundImageView];
-    [self.view addSubview:self.iconImageView];
-    [self.view addSubview:self.usernameField];
-    [self.view addSubview:self.passwordField];
-    [self.view addSubview:self.loginButton];
-    [self.view addSubview:self.registerButton];
-    [self.view addSubview:self.forgotPasswordButton];
-     */
-
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -209,7 +198,7 @@
 
     NSMutableData *tempJsonData = [NSMutableData dataWithData:jsonData];
     
-    NSURL *url = [NSURL URLWithString:LightURL];
+    NSURL *url = [NSURL URLWithString:LoginURL];
     
     NSMutableURLRequest *requst = [NSMutableURLRequest requestWithURL:url];
     

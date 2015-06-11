@@ -29,6 +29,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Intro Method
 - (void)showIntroWithCrossDissolve {
 /*
     LightIntroPage *page1 = [LightIntroPage page];

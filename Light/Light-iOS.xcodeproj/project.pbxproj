@@ -38,6 +38,8 @@
 		04545CE61B27A87D00E128B2 /* Intro03.png in Resources */ = {isa = PBXBuildFile; fileRef = 04545CE11B27A87D00E128B2 /* Intro03.png */; };
 		04545CE71B27A87D00E128B2 /* Intro04.png in Resources */ = {isa = PBXBuildFile; fileRef = 04545CE21B27A87D00E128B2 /* Intro04.png */; };
 		04545CE81B27A87D00E128B2 /* Intro05.png in Resources */ = {isa = PBXBuildFile; fileRef = 04545CE31B27A87D00E128B2 /* Intro05.png */; };
+		046A8CAF1B28B12C00BAAC34 /* IndexCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 046A8CAE1B28B12C00BAAC34 /* IndexCell.m */; };
+		049E86961B27AE6B00FF14FF /* LightAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 049E86951B27AE6B00FF14FF /* LightAPI.m */; };
 		04C598591B1C8178004A2FA9 /* ImageScale.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C598581B1C8178004A2FA9 /* ImageScale.m */; };
 		04C5986B1B1C835B004A2FA9 /* FanKuiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C5985C1B1C835B004A2FA9 /* FanKuiViewController.m */; };
 		04C5986C1B1C835B004A2FA9 /* GeRenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C5985E1B1C835B004A2FA9 /* GeRenViewController.m */; };
@@ -153,6 +155,10 @@
 		04545CE11B27A87D00E128B2 /* Intro03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Intro03.png; path = "引导页/Intro03.png"; sourceTree = "<group>"; };
 		04545CE21B27A87D00E128B2 /* Intro04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Intro04.png; path = "引导页/Intro04.png"; sourceTree = "<group>"; };
 		04545CE31B27A87D00E128B2 /* Intro05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Intro05.png; path = "引导页/Intro05.png"; sourceTree = "<group>"; };
+		046A8CAD1B28B12C00BAAC34 /* IndexCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IndexCell.h; path = "../Login&Reg/IndexCell.h"; sourceTree = "<group>"; };
+		046A8CAE1B28B12C00BAAC34 /* IndexCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IndexCell.m; path = "../Login&Reg/IndexCell.m"; sourceTree = "<group>"; };
+		049E86941B27AE6B00FF14FF /* LightAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LightAPI.h; path = API/LightAPI.h; sourceTree = "<group>"; };
+		049E86951B27AE6B00FF14FF /* LightAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LightAPI.m; path = API/LightAPI.m; sourceTree = "<group>"; };
 		04C598571B1C8178004A2FA9 /* ImageScale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageScale.h; sourceTree = "<group>"; };
 		04C598581B1C8178004A2FA9 /* ImageScale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageScale.m; sourceTree = "<group>"; };
 		04C5985B1B1C835B004A2FA9 /* FanKuiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FanKuiViewController.h; sourceTree = "<group>"; };
@@ -397,10 +403,13 @@
 		047038131B2732BE007B8278 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				049E86941B27AE6B00FF14FF /* LightAPI.h */,
+				049E86951B27AE6B00FF14FF /* LightAPI.m */,
 				0436680B1B1A3988009AC914 /* LightUser.h */,
 				0436680C1B1A3988009AC914 /* LightUser.m */,
 				04545CD91B27548C00E128B2 /* LightIndex.h */,
 				04545CDA1B27548C00E128B2 /* LightIndex.m */,
+				049E86971B27D58F00FF14FF /* POST */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -443,8 +452,12 @@
 		047038181B273417007B8278 /* 首页 */ = {
 			isa = PBXGroup;
 			children = (
+				046A8CAD1B28B12C00BAAC34 /* IndexCell.h */,
+				046A8CAE1B28B12C00BAAC34 /* IndexCell.m */,
 				04C598761B1C8368004A2FA9 /* IndexViewController.h */,
 				04C598771B1C8368004A2FA9 /* IndexViewController.m */,
+				04C5987E1B1C8368004A2FA9 /* ReadMoreViewController.h */,
+				04C5987F1B1C8368004A2FA9 /* ReadMoreViewController.m */,
 			);
 			name = "首页";
 			sourceTree = "<group>";
@@ -712,6 +725,13 @@
 			name = "Light求职场";
 			sourceTree = "<group>";
 		};
+		049E86971B27D58F00FF14FF /* POST */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = POST;
+			sourceTree = "<group>";
+		};
 		04C5985A1B1C835B004A2FA9 /* LeftView */ = {
 			isa = PBXGroup;
 			children = (
@@ -735,8 +755,6 @@
 				0470381A1B273486007B8278 /* 求同 */,
 				0470381B1B273497007B8278 /* 求爱 */,
 				0470381C1B27349E007B8278 /* 求知 */,
-				04C5987E1B1C8368004A2FA9 /* ReadMoreViewController.h */,
-				04C5987F1B1C8368004A2FA9 /* ReadMoreViewController.m */,
 			);
 			name = "主页面";
 			path = MainPage;
@@ -944,11 +962,13 @@
 				04C598701B1C835B004A2FA9 /* SheZhiTableViewController.m in Sources */,
 				04DF614D1B1F21A6001AD649 /* LightRegDetailViewController.m in Sources */,
 				0436679A1B168952009AC914 /* AppDelegate.m in Sources */,
+				046A8CAF1B28B12C00BAAC34 /* IndexCell.m in Sources */,
 				04C598851B1C8368004A2FA9 /* ReadMoreViewController.m in Sources */,
 				04DF61481B1F1D9B001AD649 /* LightRegSexViewController.m in Sources */,
 				04545CDE1B27552700E128B2 /* CommonConfig.m in Sources */,
 				04C598591B1C8178004A2FA9 /* ImageScale.m in Sources */,
 				043668121B1A419A009AC914 /* LightRegisterViewController.m in Sources */,
+				049E86961B27AE6B00FF14FF /* LightAPI.m in Sources */,
 				04C5986C1B1C835B004A2FA9 /* GeRenViewController.m in Sources */,
 				04545CC31B27467D00E128B2 /* LightIntroViewController.m in Sources */,
 				04C5986B1B1C835B004A2FA9 /* FanKuiViewController.m in Sources */,

@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#define USER_ID @"user_id"
+#define UID @"user_id"
 #define NICKNAME @"name"
 #define PASSWORD @"pwd"
 #define PHYSIOLOGY_GENDER @"physiology_gender"

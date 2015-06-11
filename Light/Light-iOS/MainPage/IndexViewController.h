@@ -10,7 +10,7 @@
 
 @interface IndexViewController : UIViewController
 @property (strong, nonatomic) UIView *leftView;//左边 view
-@property (strong, nonatomic) UIView *mainView;//主显示 view
+@property (strong, nonatomic) UITableView *mainView;//主显示 view
 @property (strong, nonatomic) UITapGestureRecognizer *tap;//tap 手势
 @property (strong, nonatomic) UIScrollView *scroll;
 @end

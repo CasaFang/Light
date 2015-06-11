@@ -45,6 +45,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - about subviews
 -(UIImageView *)backgroundImageView{
     if(_backgroundImageView==nil){
         _backgroundImageView = [[UIImageView alloc]initWithFrame:self.view.frame];
@@ -69,7 +70,6 @@
         _usernameField.verticalPadding = TextFieldPadding;
         _usernameField.placeholder = @"用户名";
         _usernameField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
-        _usernameField.delegate = self;
         _usernameField.returnKeyType = UIReturnKeyNext;
         _usernameField.clearButtonMode = UITextFieldViewModeWhileEditing;
     }
@@ -83,7 +83,6 @@
         _passwordField.background=[[UIImage imageNamed:@"operationbox_text"]stretchableImageWithLeftCapWidth:10 topCapHeight:15 ];
         _passwordField.horizontalPadding=TextFieldPadding;
         _passwordField.verticalPadding=TextFieldPadding;
-        _passwordField.delegate=self;
         _passwordField.textAlignment=UIControlContentHorizontalAlignmentCenter;
         _passwordField.placeholder=@"密码";
         _passwordField.secureTextEntry=YES;
@@ -108,6 +107,7 @@
     return _registerButton;
 }
 
+#pragma mark - Button Actions
 -(void)toRegister:(id)sender{
     [[UIApplication sharedApplication] setStatusBarHidden:NO];
     LightRegSexViewController *sex = [[LightRegSexViewController alloc]init];
@@ -117,18 +117,9 @@
     [self.navigationController pushViewController:sex animated:YES];
 }
 
+#pragma mark - keyboard Action
 -(void)closeKeyboard:(id)sender{
     [self.view endEditing:YES];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

@@ -11,8 +11,7 @@
 
 @interface LightRegSexViewController : UIViewController
 
-@property (retain, nonatomic) IBOutlet UIView *view;
-
+@property (retain,nonatomic) IBOutlet UIView *view;
 @property (nonatomic,strong) NSString *userId;
 @property (nonatomic,strong) NSString *nickname;
 @property (nonatomic,strong) NSString *password;

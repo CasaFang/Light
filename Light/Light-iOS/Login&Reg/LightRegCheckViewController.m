@@ -9,9 +9,9 @@
 #import "LightRegCheckViewController.h"
 #import "LightTextField.h"
 #import "LightRegDetailViewController.h"
+#import "LightAPI.h"
 #import <SMS_SDK/SMS_SDK.h>
 
-#define CheckURL @"http://123.57.221.116:8080/light-server/intf/user/validate.shtml"
 
 
 @interface LightRegCheckViewController ()
@@ -29,6 +29,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
     self.view.frame = CGRectMake(0, 0, CGRectGetWidth([UIScreen mainScreen].bounds), CGRectGetHeight([UIScreen mainScreen].bounds));
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(closeKeyboard:)];
@@ -37,7 +38,6 @@
     [self.view addGestureRecognizer:tap];
     
     [self.view addSubview:self.backgroundImageView];
-    
     [self.view addSubview:self.banner];
     [self.view addSubview:self.checkNum];
     [self.view addSubview:self.registerButton];
@@ -50,6 +50,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - about subviews
 -(UIImageView *)backgroundImageView{
     if(_backgroundImageView==nil){
         _backgroundImageView = [[UIImageView alloc]initWithFrame:self.view.frame];
@@ -98,6 +99,7 @@
     return _registerButton;
 }
 
+#pragma mark - Button Action
 -(void)toRegister:(id)sender{
     if ([self.type isEqualToString:@"email"]){
         NSDictionary *registerDictionary = [NSDictionary dictionaryWithObjectsAndKeys:self.userId,@"user_id",self.checkNum.text,@"val_code", nil];
@@ -109,7 +111,7 @@
         
         NSMutableData *tempJsonData = [NSMutableData dataWithData:jsonData];
         
-        NSURL *url = [NSURL URLWithString:CheckURL];
+        NSURL *url = [NSURL URLWithString:EmailCheckURL];
         
         NSMutableURLRequest *requst = [NSMutableURLRequest requestWithURL:url];
         
@@ -174,68 +176,9 @@
 
 }
 
-
-/*
--(void)toRegister:(id)sender{
-    NSDictionary *registerDictionary = [NSDictionary dictionaryWithObjectsAndKeys:self.userId,@"user_id",self.checkNum.text,@"val_code", nil];
-    NSError * error;
-    NSLog(@"registerDictionary is %@",registerDictionary);
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:registerDictionary options:NSJSONWritingPrettyPrinted error:&error];
-    NSString *registerStr = [[NSString alloc]initWithData:jsonData encoding:NSUTF8StringEncoding];
-    NSLog(@"registerString is %@",registerStr);
-    
-    NSMutableData *tempJsonData = [NSMutableData dataWithData:jsonData];
-    
-    NSURL *url = [NSURL URLWithString:CheckURL];
-    
-    NSMutableURLRequest *requst = [NSMutableURLRequest requestWithURL:url];
-    
-    [requst setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    [requst setHTTPMethod:@"POST"];
-    [requst setHTTPBody:tempJsonData];
-    NSOperationQueue *queue = [NSOperationQueue mainQueue];
-    [NSURLConnection sendAsynchronousRequest:requst queue:queue completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-        if(data){
-            NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
-            NSString *error1 = dict[@"error"];
-            if(error1){
-                NSLog(error1);
-            }
-            else
-            {
-                
-                NSError *err;
-                NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&err];
-                NSString *valide_result = dic[@"validate_result"];
-                NSLog(@"responseDictionary is %@",dic);
-//                NSLog(valide_result);
-                [[UIApplication sharedApplication] setStatusBarHidden:NO];
-                LightRegDetailViewController *detail = [[LightRegDetailViewController alloc]init];
-                    //    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:check];
-                    //    [nav.navigationController release];
-                    //    [self presentViewController:nav animated:YES completion:nil];
-                detail.userId = self.userId;
-                [self.navigationController pushViewController:detail animated:YES];
-
-            }
-        }else{
-            NSLog(@"connection error");
-        }
-    }];
-
-}
-*/
+#pragma mark - keyboard Action
 -(void)closeKeyboard:(id)sender{
     [self.view endEditing:YES];
 }
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
