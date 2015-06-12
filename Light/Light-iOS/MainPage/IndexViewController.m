@@ -120,7 +120,7 @@
     [button.layer setMasksToBounds:true];
     [button.layer setCornerRadius:35.0];
     [button setTag:105];
-     [button addTarget:self action:@selector(buttonFun:) forControlEvents:UIControlEventTouchUpInside];
+    [button addTarget:self action:@selector(buttonFun:) forControlEvents:UIControlEventTouchUpInside];
     [self.leftView addSubview:button];
 }
 
@@ -252,21 +252,29 @@
                 IndexCell *cell1 = [[IndexCell alloc]init];
                 cell1.url = [article1 objectForKey:@"pic"];
                 NSLog(@"url is %@",cell1.url);
-                [cell1 setTitle:[[NSString alloc]initWithCString:[article1 objectForKey:@"title"] encoding:NSUTF8StringEncoding]];
-                NSString *celltitle = [[NSString alloc] initWithUTF8String:[article1 objectForKey:@"title"] ];
-                NSLog(@"title is %@",celltitle);
                 
-                [cell1 setBackgroundColor:([UIColor grayColor])];
-
+                [cell1 Init];
+                cell1.title = [article1 objectForKey:@"title"];
+                NSLog(@"cell title is %@",cell1.title);
+                
+                [cell1 setBackgroundColor:[UIColor grayColor]];                
+                
                 [cell1 IndexShow];
+
                 [self.view addSubview:cell1];
-                
+                /*
                 NSDictionary *article2 = articles[1];
                 IndexCell *cell2 = [[IndexCell alloc]init];
                 cell2.url = [article2 objectForKey:@"pic"];
-                cell2.title.text = [article2 objectForKey:@"title"];
+                
+                [cell2 Init];
+                cell2.title = [article2 objectForKey:@"title"];
+                
+                [cell1 setBackgroundColor:([UIColor grayColor])];
+                
                 [cell2 IndexShow];
 //                [self.view addSubview:cell2];
+                 */
 
             }
         }

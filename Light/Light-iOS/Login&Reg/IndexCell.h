@@ -12,6 +12,7 @@
 
 //文章标题
 @property (nonatomic,retain) UILabel *title;
+@property (nonatomic,retain) UIImageView *titleBg;
 //内容图片
 @property (nonatomic,retain) UIImageView *articleBg;
 
@@ -20,5 +21,7 @@
 - (UIImage *)getImageFromURL:(NSString *)fileURL;
 + (UIImage *)fitSmallImage:(UIImage *)image;
 
+- (void) Init;
 - (void) IndexShow ;
+
 @end

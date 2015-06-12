@@ -14,6 +14,7 @@
 -(UIImage *)getImageFromURL:(NSString *)fileURL{
     NSLog(@"下载图片");
     UIImage * result;
+    NSLog(@"nsurl %@",fileURL);
     NSData * data = [NSData dataWithContentsOfURL:[NSURL URLWithString:fileURL]];
     result = [UIImage imageWithData:data];
     return result;
@@ -35,25 +36,31 @@
 +(CGSize)fitSize : (CGSize) thisSize{
     if(thisSize.width == 0 && thisSize.height == 0)
         return CGSizeMake(0, 0);
-    CGFloat wscale = thisSize.width/[UIScreen mainScreen].bounds.origin.x;
-    CGFloat hscale = thisSize.height/[UIScreen mainScreen].bounds.origin.y;
+    CGFloat wscale = thisSize.width/[[UIScreen mainScreen] bounds].size.width;
+    CGFloat hscale = thisSize.height/[[UIScreen mainScreen] bounds].size.height;
     CGFloat scale = (wscale>hscale)?wscale:hscale;
     CGSize newSize = CGSizeMake(thisSize.width/scale, thisSize.height/scale);
     return newSize;
 }
 
--(void) IndexShow{
-    CGFloat imageHeight =[IndexCell fitSmallImage:[self getImageFromURL:self.url]].size.height;
-    _articleBg  = [[UIImageView alloc] initWithFrame:CGRectMake(5, 5, [UIScreen mainScreen].bounds.origin.x, imageHeight)];
-    _title = [[UILabel alloc]initWithFrame:CGRectMake(5, imageHeight, [UIScreen mainScreen].bounds.origin.x, 20)];
-    _title.backgroundColor = [UIColor whiteColor];
+-(void)Init {
+    CGFloat imageHeight =[IndexCell fitSmallImage:[self getImageFromURL:_url]].size.height;
+    CGFloat imageWidth =[IndexCell fitSmallImage:[self getImageFromURL:_url]].size.width;
     
-    [_articleBg setImage:[self getImageFromURL:self.url]];
-    NSLog(@"设置背景");
+    self.articleBg  = [[UIImageView alloc] initWithImage:[IndexCell fitSmallImage:[self getImageFromURL:_url]]];
+    self.titleBg = [[UIImageView alloc]initWithFrame:CGRectMake(0, imageHeight, imageWidth, 25)];
+    self.titleBg.backgroundColor = [UIColor grayColor];
     
-    [self addSubview:_articleBg];
-    [self addSubview:_title];
-    
+    self.title = [[UILabel alloc] initWithFrame:CGRectMake(10, imageHeight, imageWidth,20)];
+    [self.title setFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:13.0]];
+    [self.title setTextColor:[UIColor whiteColor]];
+
 }
 
+-(void) IndexShow{
+    
+    [self addSubview:_articleBg];
+    [self addSubview:_titleBg];
+    [self addSubview:_title];
+}
 @end
