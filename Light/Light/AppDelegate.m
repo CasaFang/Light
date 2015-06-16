@@ -7,16 +7,40 @@
 //
 
 #import "AppDelegate.h"
+#import "LightLoginViewController.h"
+//#import "IndexViewController.h"
+//#import "MSGViewController.h"
+//#import "CPYTableViewController.h"
+//#import "LOVETableViewController.h"
+//#import "KDGTableViewController.h"
+//#import "LightBaseTabController.h"
+#import "LightIntroViewController.h"
+#import <SMS_SDK/SMS_SDK.h>
+
+#define LightKey @"82645f6f16b8"
+#define LightSecret @"ea2501269690d16dbe480f5bea373924"
 
 @interface AppDelegate ()
 
 @end
 
-@implementation AppDelegate
+@implementation AppDelegate{
+    UITabBarController *main;
+    CGRect barRect;
+}
+
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    [SMS_SDK registerApp:LightKey withSecret:LightSecret];
+    NSLog(@"SMS初始化");
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] ;
+    [self toIntro];
+//    [self toLogin];
+    
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
@@ -41,5 +65,79 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+
+-(void)toIntro {
+    LightIntroViewController *intro = [[LightIntroViewController alloc]init];
+    
+    self.window.rootViewController = intro;
+    
+}
+
+
+-(void)toLogin {
+    
+    LightLoginViewController *loginView=[[LightLoginViewController alloc]init] ;
+    
+    self.window.rootViewController = loginView;
+    
+}
+
+/*
+-(void)toMain{
+    
+    IndexViewController *index=[[IndexViewController alloc]init];
+    MSGViewController *message=[[MSGViewController alloc]init];
+    CPYTableViewController *company=[[CPYTableViewController alloc]init];
+    LOVETableViewController *love=[[LOVETableViewController alloc]init];
+    KDGTableViewController *knowdge=[[KDGTableViewController alloc]init];
+    
+    main=[[UITabBarController alloc]init];
+    
+    
+    
+    main.viewControllers=[NSArray arrayWithObjects:index,message, company,love,knowdge,nil];
+    index.title=@"首页";
+    message.title=@"消息";
+    company.title=@"求同";
+    love.title=@"求爱";
+    knowdge.title=@"求知";
+    [((UITabBarItem*)[main.tabBar.items objectAtIndex:0]) setImage:[UIImage imageNamed:@"index_24*24_grey.png"]];
+    [((UITabBarItem*)[main.tabBar.items objectAtIndex:1]) setImage:[UIImage imageNamed:@"MSG_24*24_grey.png"]];
+    [((UITabBarItem*)[main.tabBar.items objectAtIndex:2]) setImage:[UIImage imageNamed:@"KPY_24*24_grey.png"]];
+    [((UITabBarItem*)[main.tabBar.items objectAtIndex:3]) setImage:[UIImage imageNamed:@"love_24*24_grey.png"]];
+    [((UITabBarItem*)[main.tabBar.items objectAtIndex:4]) setImage:[UIImage imageNamed:@"KDG_24*24_grey.png"]];
+    self.navigation=[[UINavigationController alloc]initWithRootViewController:main];
+    [self.window setRootViewController:self.navigation];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(tabbarMove) name:@"MOVE" object:nil];
+    barRect=main.tabBar.frame;
+    
+}
+ */
+
+-(void)tabbarMove
+{
+    NSLog(@"TABBARMOVE");
+    static BOOL isshow=false;
+    if (!isshow) {
+        [main.tabBar setFrame:CGRectMake([UIScreen mainScreen].bounds.size.width-50, barRect.origin.y, barRect.size.width, barRect.size.height)];
+        isshow=true;
+    }
+    else
+    {
+        [main.tabBar setFrame:barRect];
+        isshow=false;
+    }
+}
+
+/*
+-(void)dealloc
+{
+    [main release];
+    [self.window release];
+    [super dealloc];
+}
+ */
+
 
 @end
