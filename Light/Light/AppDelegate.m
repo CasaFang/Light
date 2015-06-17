@@ -8,13 +8,8 @@
 
 #import "AppDelegate.h"
 #import "LightLoginViewController.h"
-//#import "IndexViewController.h"
-//#import "MSGViewController.h"
-//#import "CPYTableViewController.h"
-//#import "LOVETableViewController.h"
-//#import "KDGTableViewController.h"
-//#import "LightBaseTabController.h"
 #import "LightIntroViewController.h"
+#import "LightBaseTabBarController.h"
 #import <SMS_SDK/SMS_SDK.h>
 
 #define LightKey @"82645f6f16b8"
@@ -83,37 +78,15 @@
     
 }
 
-/*
+
 -(void)toMain{
     
-    IndexViewController *index=[[IndexViewController alloc]init];
-    MSGViewController *message=[[MSGViewController alloc]init];
-    CPYTableViewController *company=[[CPYTableViewController alloc]init];
-    LOVETableViewController *love=[[LOVETableViewController alloc]init];
-    KDGTableViewController *knowdge=[[KDGTableViewController alloc]init];
+    LightBaseTabBarController *main = [[LightBaseTabBarController alloc]init];
     
-    main=[[UITabBarController alloc]init];
-    
-    
-    
-    main.viewControllers=[NSArray arrayWithObjects:index,message, company,love,knowdge,nil];
-    index.title=@"首页";
-    message.title=@"消息";
-    company.title=@"求同";
-    love.title=@"求爱";
-    knowdge.title=@"求知";
-    [((UITabBarItem*)[main.tabBar.items objectAtIndex:0]) setImage:[UIImage imageNamed:@"index_24*24_grey.png"]];
-    [((UITabBarItem*)[main.tabBar.items objectAtIndex:1]) setImage:[UIImage imageNamed:@"MSG_24*24_grey.png"]];
-    [((UITabBarItem*)[main.tabBar.items objectAtIndex:2]) setImage:[UIImage imageNamed:@"KPY_24*24_grey.png"]];
-    [((UITabBarItem*)[main.tabBar.items objectAtIndex:3]) setImage:[UIImage imageNamed:@"love_24*24_grey.png"]];
-    [((UITabBarItem*)[main.tabBar.items objectAtIndex:4]) setImage:[UIImage imageNamed:@"KDG_24*24_grey.png"]];
     self.navigation=[[UINavigationController alloc]initWithRootViewController:main];
     [self.window setRootViewController:self.navigation];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(tabbarMove) name:@"MOVE" object:nil];
-    barRect=main.tabBar.frame;
-    
 }
- */
 
 -(void)tabbarMove
 {

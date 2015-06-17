@@ -35,6 +35,12 @@
 		049F3D1C1B2D5A0F0014F09A /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 049F3D1B1B2D5A0F0014F09A /* CFNetwork.framework */; };
 		049F3D1E1B2D5A470014F09A /* SMS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 049F3D1D1B2D5A470014F09A /* SMS_SDK.framework */; };
 		049F3D201B2D5AAC0014F09A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 049F3D1F1B2D5AAC0014F09A /* Default-568h@2x.png */; };
+		04BA69E91B319055001FC1B2 /* LightBaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BA69E81B319055001FC1B2 /* LightBaseTabBarController.m */; };
+		04BA69EC1B3190B6001FC1B2 /* IndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BA69EB1B3190B6001FC1B2 /* IndexViewController.m */; };
+		04BA69EF1B3190E9001FC1B2 /* MSGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BA69EE1B3190E9001FC1B2 /* MSGViewController.m */; };
+		04BA69F21B319123001FC1B2 /* CPYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BA69F11B319123001FC1B2 /* CPYViewController.m */; };
+		04BA69F51B31916B001FC1B2 /* LoveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BA69F41B31916B001FC1B2 /* LoveViewController.m */; };
+		04BA69F81B31918F001FC1B2 /* KDGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BA69F71B31918F001FC1B2 /* KDGViewController.m */; };
 		04D1A4301B2C915C005823E4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D1A42F1B2C915C005823E4 /* main.m */; };
 		04D1A4331B2C915C005823E4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D1A4321B2C915C005823E4 /* AppDelegate.m */; };
 		04D1A43B1B2C915C005823E4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04D1A43A1B2C915C005823E4 /* Images.xcassets */; };
@@ -145,6 +151,19 @@
 		049F3D1D1B2D5A470014F09A /* SMS_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SMS_SDK.framework; path = Light/SMS_SDK.framework; sourceTree = "<group>"; };
 		049F3D1F1B2D5AAC0014F09A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		049F3D211B2D5BC60014F09A /* LightAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LightAPI.h; sourceTree = "<group>"; };
+		04BA69E71B319055001FC1B2 /* LightBaseTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LightBaseTabBarController.h; path = "主界面/LightBaseTabBarController.h"; sourceTree = "<group>"; };
+		04BA69E81B319055001FC1B2 /* LightBaseTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LightBaseTabBarController.m; path = "主界面/LightBaseTabBarController.m"; sourceTree = "<group>"; };
+		04BA69EA1B3190B6001FC1B2 /* IndexViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IndexViewController.h; path = "主界面/IndexViewController.h"; sourceTree = "<group>"; };
+		04BA69EB1B3190B6001FC1B2 /* IndexViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IndexViewController.m; path = "主界面/IndexViewController.m"; sourceTree = "<group>"; };
+		04BA69ED1B3190E9001FC1B2 /* MSGViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSGViewController.h; path = "主界面/MSGViewController.h"; sourceTree = "<group>"; };
+		04BA69EE1B3190E9001FC1B2 /* MSGViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSGViewController.m; path = "主界面/MSGViewController.m"; sourceTree = "<group>"; };
+		04BA69F01B319123001FC1B2 /* CPYViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPYViewController.h; path = "主界面/CPYViewController.h"; sourceTree = "<group>"; };
+		04BA69F11B319123001FC1B2 /* CPYViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPYViewController.m; path = "主界面/CPYViewController.m"; sourceTree = "<group>"; };
+		04BA69F31B31916B001FC1B2 /* LoveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoveViewController.h; path = "主界面/LoveViewController.h"; sourceTree = "<group>"; };
+		04BA69F41B31916B001FC1B2 /* LoveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoveViewController.m; path = "主界面/LoveViewController.m"; sourceTree = "<group>"; };
+		04BA69F61B31918F001FC1B2 /* KDGViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDGViewController.h; path = "主界面/KDGViewController.h"; sourceTree = "<group>"; };
+		04BA69F71B31918F001FC1B2 /* KDGViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDGViewController.m; path = "主界面/KDGViewController.m"; sourceTree = "<group>"; };
+		04BA69F91B319325001FC1B2 /* IndexHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexHeader.h; sourceTree = "<group>"; };
 		04D1A42A1B2C915C005823E4 /* Light.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Light.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04D1A42E1B2C915C005823E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04D1A42F1B2C915C005823E4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -280,6 +299,9 @@
 		049F3D011B2D55B80014F09A /* 主界面 */ = {
 			isa = PBXGroup;
 			children = (
+				04BA69E71B319055001FC1B2 /* LightBaseTabBarController.h */,
+				04BA69E81B319055001FC1B2 /* LightBaseTabBarController.m */,
+				04BA69F91B319325001FC1B2 /* IndexHeader.h */,
 				049F3D071B2D581C0014F09A /* 首页 */,
 				049F3D0B1B2D58450014F09A /* 消息 */,
 				049F3D081B2D58290014F09A /* 求同 */,
@@ -359,6 +381,8 @@
 		049F3D071B2D581C0014F09A /* 首页 */ = {
 			isa = PBXGroup;
 			children = (
+				04BA69EA1B3190B6001FC1B2 /* IndexViewController.h */,
+				04BA69EB1B3190B6001FC1B2 /* IndexViewController.m */,
 			);
 			name = "首页";
 			sourceTree = "<group>";
@@ -366,6 +390,8 @@
 		049F3D081B2D58290014F09A /* 求同 */ = {
 			isa = PBXGroup;
 			children = (
+				04BA69F01B319123001FC1B2 /* CPYViewController.h */,
+				04BA69F11B319123001FC1B2 /* CPYViewController.m */,
 			);
 			name = "求同";
 			sourceTree = "<group>";
@@ -373,6 +399,8 @@
 		049F3D091B2D58330014F09A /* 求爱 */ = {
 			isa = PBXGroup;
 			children = (
+				04BA69F31B31916B001FC1B2 /* LoveViewController.h */,
+				04BA69F41B31916B001FC1B2 /* LoveViewController.m */,
 			);
 			name = "求爱";
 			sourceTree = "<group>";
@@ -380,6 +408,8 @@
 		049F3D0A1B2D583B0014F09A /* 求知 */ = {
 			isa = PBXGroup;
 			children = (
+				04BA69F61B31918F001FC1B2 /* KDGViewController.h */,
+				04BA69F71B31918F001FC1B2 /* KDGViewController.m */,
 			);
 			name = "求知";
 			sourceTree = "<group>";
@@ -387,6 +417,8 @@
 		049F3D0B1B2D58450014F09A /* 消息 */ = {
 			isa = PBXGroup;
 			children = (
+				04BA69ED1B3190E9001FC1B2 /* MSGViewController.h */,
+				04BA69EE1B3190E9001FC1B2 /* MSGViewController.m */,
 			);
 			name = "消息";
 			sourceTree = "<group>";
@@ -724,23 +756,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				048385031B2F205100ED7693 /* PostUser.m in Sources */,
+				04BA69F21B319123001FC1B2 /* CPYViewController.m in Sources */,
+				04BA69E91B319055001FC1B2 /* LightBaseTabBarController.m in Sources */,
 				048385101B2F2C0500ED7693 /* LightRegSexViewController.m in Sources */,
 				048384F01B2F0A6600ED7693 /* LightNavigationController.m in Sources */,
 				048AC0701B3018D40076DB17 /* LightIntroPage.m in Sources */,
 				048384FD1B2F18F500ED7693 /* LightLoginViewController.m in Sources */,
 				048384DD1B2D5E7300ED7693 /* LightUser.m in Sources */,
+				04BA69F51B31916B001FC1B2 /* LoveViewController.m in Sources */,
 				048384F71B2F121200ED7693 /* LightTableViewController.m in Sources */,
 				04D1A4331B2C915C005823E4 /* AppDelegate.m in Sources */,
 				048AC0721B3018D40076DB17 /* LightIntroViewController.m in Sources */,
 				048384ED1B2F09F800ED7693 /* LightTableViewCell.m in Sources */,
 				048385061B2F2B3400ED7693 /* LightRegisterViewController.m in Sources */,
 				048384E31B2D64BF00ED7693 /* LightValidateCode.m in Sources */,
+				04BA69EC1B3190B6001FC1B2 /* IndexViewController.m in Sources */,
 				048384E71B2D68E000ED7693 /* LightArticle.m in Sources */,
 				048384EA1B2D6C9D00ED7693 /* UIButton+Util.m in Sources */,
+				04BA69F81B31918F001FC1B2 /* KDGViewController.m in Sources */,
 				0483850C1B2F2BBE00ED7693 /* LightRegDetailViewController.m in Sources */,
 				048AC0711B3018D40076DB17 /* LightIntroView.m in Sources */,
 				048385091B2F2B9500ED7693 /* LightRegCheckViewController.m in Sources */,
 				048384E01B2D622300ED7693 /* LightRegisterUser.m in Sources */,
+				04BA69EF1B3190E9001FC1B2 /* MSGViewController.m in Sources */,
 				048384FA1B2F130A00ED7693 /* LightBaseLoginViewController.m in Sources */,
 				048385001B2F19A600ED7693 /* LightTextField.m in Sources */,
 				04D1A4301B2C915C005823E4 /* main.m in Sources */,

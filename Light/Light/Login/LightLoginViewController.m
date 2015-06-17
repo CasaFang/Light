@@ -199,8 +199,8 @@
     user.physiology_gender = post.result[@"physiology_gender"];
     user.society_gender = post.result[@"physiology_gender"];
     
-//    AppDelegate * delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-//    [delegate toMain];
+    AppDelegate * delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    [delegate toMain];
 }
 
 
