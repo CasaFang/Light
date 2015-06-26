@@ -37,7 +37,6 @@
     
 //    [self tempArticles];
     [self.view addSubview:_tableView];
-    [_tableView numberOfRowsInSection:num];
 //    [self toArrary];
 }
 
@@ -103,18 +102,7 @@
 
 }
 
--(void) toArrary {
-    NSDictionary *getArticleDict=[NSDictionary dictionaryWithObjectsAndKeys:@"3",@"page_size",@"1",@"page_no", nil];
-    PostInfo *post = [[PostInfo alloc]init];
-    NSURL *url = [NSURL URLWithString:LIGHT_INDEX_URL];
-    [post postInfo:getArticleDict infourl:url];
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(toArticleArrary:) name:@"postResult" object:post.result];
-}
--(void)toArticleArrary:(NSNotification *)notification {
-    id result = [notification object];
-    NSArray *articles = result[@"articles"];
-//    NSLog(@"array is %@",articles);
-}
+
 
 #pragma mark - 数据源方法
 #pragma mark 返回分组数
