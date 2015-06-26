@@ -63,6 +63,7 @@
 
 
 -(void)toIntro {
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     LightIntroViewController *intro = [[LightIntroViewController alloc]init];
     
     self.window.rootViewController = intro;
@@ -81,10 +82,10 @@
 
 -(void)toMain{
     
-    LightBaseTabBarController *main = [[LightBaseTabBarController alloc]init];
+    LightBaseTabBarController *mainVC = [[LightBaseTabBarController alloc]init];
     
-    self.navigation=[[UINavigationController alloc]initWithRootViewController:main];
-    [self.window setRootViewController:self.navigation];
+    self.navigation=[[UINavigationController alloc]initWithRootViewController:mainVC];
+    [self.window setRootViewController:mainVC];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(tabbarMove) name:@"MOVE" object:nil];
 }
 

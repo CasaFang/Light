@@ -8,7 +8,7 @@
 
 #import "LightLoginViewController.h"
 #import "LightAPI.h"
-#import "PostUser.h"
+#import "PostInfo.h"
 #import "LightUser.h"
 #import "LightRegisterViewController.h"
 #import "AppDelegate.h"
@@ -187,17 +187,25 @@
 -(void)login:(id)sender {
 
     NSDictionary *userDictionary = [NSDictionary dictionaryWithObjectsAndKeys:self.usernameField.text,@"code",self.passwordField.text,@"pwd", nil];
-    PostUser *post = [[PostUser alloc]init];
+    PostInfo *post = [[PostInfo alloc]init];
     
-    [post postUserInfo:userDictionary infourl:[NSURL URLWithString:LIGHT_LOGIN_URL]];
+    [post postInfo:userDictionary infourl:[NSURL URLWithString:LIGHT_LOGIN_URL]];
     
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(toMain:) name:@"postResult" object:post.result];
+    
+}
+
+-(void) toMain:(NSNotification *)notification{
+    
+    id result = [notification object];
+    NSLog(@"notification is %@",result);
     LightUser *user = [[LightUser alloc]init];
     
-    user.userID = [post.result[@"id"] intValue];
-    user.name = post.result[@"name"];
-    user.avatar = post.result[@"avatar"];
-    user.physiology_gender = post.result[@"physiology_gender"];
-    user.society_gender = post.result[@"physiology_gender"];
+    user.userID = [result[@"id"] intValue];
+    user.name = result[@"name"];
+    user.avatar = result[@"avatar"];
+    user.physiology_gender = result[@"physiology_gender"];
+    user.society_gender = result[@"physiology_gender"];
     
     AppDelegate * delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     [delegate toMain];

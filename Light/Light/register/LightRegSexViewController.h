@@ -11,7 +11,7 @@
 
 @interface LightRegSexViewController : UIViewController
 
-@property (nonatomic,assign) int64_t userId;
+@property (nonatomic,assign) NSString *userId;
 @property (nonatomic,strong) NSString *nickname;
 @property (nonatomic,strong) NSString *password;
 

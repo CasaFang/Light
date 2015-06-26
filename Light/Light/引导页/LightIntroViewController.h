@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LightIntroView.h"
 
-@interface LightIntroViewController : UIViewController
+@interface LightIntroViewController : UIViewController <LightIntroDelegate>
 
 @end

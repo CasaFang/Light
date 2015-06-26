@@ -9,7 +9,7 @@
 #import "LightRegSexViewController.h"
 #import "AppDelegate.h"
 #import "LightAPI.h"
-#import "PostUser.h"
+#import "PostInfo.h"
 #import "AppDelegate.h"
 
 @interface LightRegSexViewController ()
@@ -136,27 +136,30 @@
 
 #pragma mark - Button Action
 -(void)choseBio: (UIButton *)btn {
-    NSDictionary *registerDictionary = [NSDictionary dictionaryWithObjectsAndKeys:@"%@",self.userId,@"user_id",self.nickname,@"name",self.password,@"pwd",btn.tag,@"physiology_gender", nil];
+    NSLog(@"user_id = %@, name = %@ , pwd = %@ , physiology_gender %li",self.userId,self.nickname,self.password,(long)btn.tag);
+    
+    NSDictionary *registerDictionary = [NSDictionary dictionaryWithObjectsAndKeys:self.userId,@"user_id",self.nickname,@"name",self.password,@"pwd",btn.tag,@"physiology_gender", nil];
+    NSLog(@"registerDic is %@",registerDictionary);
     NSURL *url = [NSURL URLWithString:LIGHT_ADDINFO_URL];
     
-    PostUser *post = [[PostUser alloc]init];
-    [post postUserInfo:registerDictionary infourl:url];
+    PostInfo *post = [[PostInfo alloc]init];
+    [post postInfo:registerDictionary infourl:url];
     
     [[UIApplication sharedApplication] setStatusBarHidden:NO];
-//    AppDelegate * delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-//    [delegate toMain];
+    AppDelegate * delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    [delegate toMain];
 }
 
 -(void)chosePsy: (UIButton *)btn {
-    NSDictionary *registerDictionary = [NSDictionary dictionaryWithObjectsAndKeys:@"%@",self.userId,@"user_id",self.nickname,@"name",self.password,@"pwd",btn.tag,@"society_gender", nil];
+    NSDictionary *registerDictionary = [NSDictionary dictionaryWithObjectsAndKeys:self.userId,@"user_id",self.nickname,@"name",self.password,@"pwd",btn.tag,@"society_gender", nil];
     NSURL *url = [NSURL URLWithString:LIGHT_ADDINFO_URL];
     
-    PostUser *post = [[PostUser alloc]init];
-    [post postUserInfo:registerDictionary infourl:url];
+    PostInfo *post = [[PostInfo alloc]init];
+    [post postInfo:registerDictionary infourl:url];
     
     [[UIApplication sharedApplication] setStatusBarHidden:NO];
-//    AppDelegate * delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-//    [delegate toMain];
+    AppDelegate * delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    [delegate toMain];
 
 }
 

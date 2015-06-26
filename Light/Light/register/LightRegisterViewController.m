@@ -12,7 +12,7 @@
 #import "LightRegDetailViewController.h"
 #import "LightRegSexViewController.h"
 #import "LightLoginViewController.h"
-#import "PostUser.h"
+#import "PostInfo.h"
 #import "LightRegisterUser.h"
 #import "LightAPI.h"
 #import <SMS_SDK/SMS_SDK.h>
@@ -204,31 +204,43 @@
 
 -(void)toContinue:(UIButton *) type {
     [self validate];
-    LightRegCheckViewController *check = [[LightRegCheckViewController alloc]init];
     
     NSDictionary *registerDictionary = [NSDictionary dictionaryWithObjectsAndKeys:self.registerNum.text,@"code", nil];
     
-    PostUser *post = [[PostUser alloc]init];
+    PostInfo *post = [[PostInfo alloc]init];
     
-    [post postUserInfo:registerDictionary infourl:[NSURL URLWithString:LIGHT_REGISTER_URL]];
+    [post postInfo:registerDictionary infourl:[NSURL URLWithString:LIGHT_REGISTER_URL]];
     
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(toContinueReg:) name:@"postResult" object:post.result];
+}
+
+-(void)toContinueReg:(NSNotification *)notification{
+    id result = [notification object];
+    
+    NSLog(@"result is %@",result);
+    
+    LightRegCheckViewController *check = [[LightRegCheckViewController alloc]init];
+
     LightRegisterUser *regUser = [[LightRegisterUser alloc]init];
     
-    regUser.userID = [post.result[@"user_id"] intValue];
+    regUser.userID = result[@"user_id"];
     
     [[UIApplication sharedApplication] setStatusBarHidden:NO];
     check.userId = regUser.userID;
+    NSLog(@"regUser.userID = %@",regUser.userID);
     [self.navigationController pushViewController:check animated:NO];
-    NSLog(@"tag值为：%li",type.tag);
-    if(type.tag == 1){
+    NSLog(@"tag值为：%li",_continueButton.tag);
+    if(_continueButton.tag == 1){
         check.type= @"email";
+        NSLog(@"check type is %@",check.type);
     }
     else{
         [SMS_SDK getVerificationCodeBySMSWithPhone:self.registerNum.text zone:@"86" result:^(SMS_SDKError *error) {
             if(!error){
                 NSLog(@"connect success");
-                [[UIApplication sharedApplication] setStatusBarHidden:NO];
                 check.type = @"phone";
+                [[UIApplication sharedApplication] setStatusBarHidden:NO];
+                NSLog(@"check type is %@",check.type);
             }
         }];
     }

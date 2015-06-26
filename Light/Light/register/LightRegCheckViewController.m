@@ -10,7 +10,7 @@
 #import "LightTextField.h"
 #import "LightRegDetailViewController.h"
 #import "LightAPI.h"
-#import "PostUser.h"
+#import "PostInfo.h"
 #import "LightValidateCode.h"
 #import <SMS_SDK/SMS_SDK.h>
 
@@ -104,27 +104,16 @@
 
 
 -(void)toRegister:(id)sender{
+    NSLog(@"type is %@",self.type);
     if ([self.type isEqualToString:@"email"]){
-        NSDictionary *registerDictionary = [NSDictionary dictionaryWithObjectsAndKeys:@"%@",self.userId,@"user_id",self.checkNum.text,@"val_code", nil];
+        NSDictionary *registerDictionary = [NSDictionary dictionaryWithObjectsAndKeys:self.userId,@"user_id",self.checkNum.text,@"val_code", nil];
         NSURL *url = [NSURL URLWithString:LIGHT_VALIDATE_URL];
         
-        PostUser *post = [[PostUser alloc]init];
+        PostInfo *post = [[PostInfo alloc]init];
         
-        [post postUserInfo:registerDictionary infourl:url];
-        
-        LightValidateCode *validate = [[LightValidateCode alloc]init];
-        validate.result = [post.result[@"validate_result"] intValue];
-        
-        if (validate.result == 1) {
-            [[UIApplication sharedApplication] setStatusBarHidden:NO];
-            LightRegDetailViewController *detail = [[LightRegDetailViewController alloc]init];
-            detail.userId = self.userId;
-            [self.navigationController pushViewController:detail animated:YES];
-        }else {
-            UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Wrong" message:@"您输入的手机号格式有误" delegate:self cancelButtonTitle:NSLocalizedString(@"返回", nil) otherButtonTitles:NSLocalizedString(@"确定",nil), nil];
-            [alert show];
-        }
-    }
+        [post postInfo:registerDictionary infourl:url];
+        [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(toEmailReg:) name:@"postResult" object:post.result];
+         }
     else {
         [SMS_SDK commitVerifyCode:self.checkNum.text result:^(enum SMS_ResponseState state) {
             if (1==state)
@@ -150,6 +139,26 @@
             }
         }];
     }
+}
+
+-(void)toEmailReg:(NSNotification *)notification{
+    id result = [notification object];
+    NSLog(@"toEmail Result is %@",result);
+    
+    LightValidateCode *validate = [[LightValidateCode alloc]init];
+    validate.result = [result[@"validate_result"] intValue];
+    NSLog(@"validate is %lli",validate.result);
+    
+    if (validate.result == 1) {
+        [[UIApplication sharedApplication] setStatusBarHidden:NO];
+        LightRegDetailViewController *detail = [[LightRegDetailViewController alloc]init];
+        detail.userId = self.userId;
+        [self.navigationController pushViewController:detail animated:YES];
+    }else {
+        UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Wrong" message:@"您输入的手机号格式有误" delegate:self cancelButtonTitle:NSLocalizedString(@"返回", nil) otherButtonTitles:NSLocalizedString(@"确定",nil), nil];
+        [alert show];
+    }
+
 }
 
 #pragma mark - keyboard Action

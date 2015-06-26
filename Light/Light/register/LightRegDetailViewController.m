@@ -115,6 +115,7 @@
     sex.userId = self.userId;
     sex.nickname = self.usernameField.text;
     sex.password = self.passwordField.text;
+    NSLog(@"user_id = %@ , nickname = %@ , password = %@",self.userId,self.usernameField.text,self.passwordField.text);
     [self.navigationController pushViewController:sex animated:YES];
 }
 

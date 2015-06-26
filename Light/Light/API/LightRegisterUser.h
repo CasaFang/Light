@@ -10,7 +10,7 @@
 
 @interface LightRegisterUser : NSObject
 
-@property (nonatomic,readwrite,assign) int64_t userID;
+@property (nonatomic,readwrite,assign) NSString *userID;
 @property (nonatomic,readwrite,copy) NSString *code;
 @property (nonatomic,readwrite,copy) NSString *pwd;
 @property (nonatomic,readwrite,copy) NSString *name;

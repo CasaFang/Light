@@ -13,7 +13,7 @@
 - (void)introDidFinish;
 @end
 
-@interface LightIntroView : UIView
+@interface LightIntroView : UIView <UIScrollViewDelegate>
 
 @property (nonatomic, assign) id<LightIntroDelegate> delegate;
 

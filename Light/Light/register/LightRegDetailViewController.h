@@ -18,6 +18,6 @@ static CGFloat defaultHeaderSize = 80;
 
 @interface LightRegDetailViewController : UIViewController
 
-@property (nonatomic) int64_t userId;
+@property (nonatomic) NSString *userId;
 
 @end

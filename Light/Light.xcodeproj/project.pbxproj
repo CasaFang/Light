@@ -19,7 +19,6 @@
 		048384FA1B2F130A00ED7693 /* LightBaseLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 048384F91B2F130A00ED7693 /* LightBaseLoginViewController.m */; };
 		048384FD1B2F18F500ED7693 /* LightLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 048384FC1B2F18F500ED7693 /* LightLoginViewController.m */; };
 		048385001B2F19A600ED7693 /* LightTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 048384FF1B2F19A600ED7693 /* LightTextField.m */; };
-		048385031B2F205100ED7693 /* PostUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 048385021B2F205100ED7693 /* PostUser.m */; };
 		048385061B2F2B3400ED7693 /* LightRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 048385051B2F2B3400ED7693 /* LightRegisterViewController.m */; };
 		048385091B2F2B9500ED7693 /* LightRegCheckViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 048385081B2F2B9500ED7693 /* LightRegCheckViewController.m */; };
 		0483850C1B2F2BBE00ED7693 /* LightRegDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0483850B1B2F2BBE00ED7693 /* LightRegDetailViewController.m */; };
@@ -41,6 +40,8 @@
 		04BA69F21B319123001FC1B2 /* CPYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BA69F11B319123001FC1B2 /* CPYViewController.m */; };
 		04BA69F51B31916B001FC1B2 /* LoveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BA69F41B31916B001FC1B2 /* LoveViewController.m */; };
 		04BA69F81B31918F001FC1B2 /* KDGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BA69F71B31918F001FC1B2 /* KDGViewController.m */; };
+		04BA69FC1B31A0D8001FC1B2 /* IndexTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BA69FB1B31A0D8001FC1B2 /* IndexTableViewCell.m */; };
+		04C7CF0A1B31B4FB00FED3DB /* PostInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C7CF091B31B4FB00FED3DB /* PostInfo.m */; };
 		04D1A4301B2C915C005823E4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D1A42F1B2C915C005823E4 /* main.m */; };
 		04D1A4331B2C915C005823E4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D1A4321B2C915C005823E4 /* AppDelegate.m */; };
 		04D1A43B1B2C915C005823E4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04D1A43A1B2C915C005823E4 /* Images.xcassets */; };
@@ -125,8 +126,6 @@
 		048384FC1B2F18F500ED7693 /* LightLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LightLoginViewController.m; path = Login/LightLoginViewController.m; sourceTree = "<group>"; };
 		048384FE1B2F19A600ED7693 /* LightTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LightTextField.h; path = Utils/LightTextField.h; sourceTree = "<group>"; };
 		048384FF1B2F19A600ED7693 /* LightTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LightTextField.m; path = Utils/LightTextField.m; sourceTree = "<group>"; };
-		048385011B2F205100ED7693 /* PostUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostUser.h; path = API/PostUser.h; sourceTree = "<group>"; };
-		048385021B2F205100ED7693 /* PostUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostUser.m; path = API/PostUser.m; sourceTree = "<group>"; };
 		048385041B2F2B2700ED7693 /* LightRegisterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LightRegisterViewController.h; path = register/LightRegisterViewController.h; sourceTree = "<group>"; };
 		048385051B2F2B3400ED7693 /* LightRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LightRegisterViewController.m; path = register/LightRegisterViewController.m; sourceTree = "<group>"; };
 		048385071B2F2B9500ED7693 /* LightRegCheckViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LightRegCheckViewController.h; path = register/LightRegCheckViewController.h; sourceTree = "<group>"; };
@@ -164,6 +163,10 @@
 		04BA69F61B31918F001FC1B2 /* KDGViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KDGViewController.h; path = "主界面/KDGViewController.h"; sourceTree = "<group>"; };
 		04BA69F71B31918F001FC1B2 /* KDGViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KDGViewController.m; path = "主界面/KDGViewController.m"; sourceTree = "<group>"; };
 		04BA69F91B319325001FC1B2 /* IndexHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexHeader.h; sourceTree = "<group>"; };
+		04BA69FA1B31A0D8001FC1B2 /* IndexTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IndexTableViewCell.h; path = "主界面/IndexTableViewCell.h"; sourceTree = "<group>"; };
+		04BA69FB1B31A0D8001FC1B2 /* IndexTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IndexTableViewCell.m; path = "主界面/IndexTableViewCell.m"; sourceTree = "<group>"; };
+		04C7CF081B31B4FB00FED3DB /* PostInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostInfo.h; path = API/PostInfo.h; sourceTree = "<group>"; };
+		04C7CF091B31B4FB00FED3DB /* PostInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostInfo.m; path = API/PostInfo.m; sourceTree = "<group>"; };
 		04D1A42A1B2C915C005823E4 /* Light.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Light.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04D1A42E1B2C915C005823E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04D1A42F1B2C915C005823E4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -344,8 +347,8 @@
 		049F3D041B2D57F10014F09A /* POST */ = {
 			isa = PBXGroup;
 			children = (
-				048385011B2F205100ED7693 /* PostUser.h */,
-				048385021B2F205100ED7693 /* PostUser.m */,
+				04C7CF081B31B4FB00FED3DB /* PostInfo.h */,
+				04C7CF091B31B4FB00FED3DB /* PostInfo.m */,
 			);
 			name = POST;
 			sourceTree = "<group>";
@@ -381,6 +384,8 @@
 		049F3D071B2D581C0014F09A /* 首页 */ = {
 			isa = PBXGroup;
 			children = (
+				04BA69FA1B31A0D8001FC1B2 /* IndexTableViewCell.h */,
+				04BA69FB1B31A0D8001FC1B2 /* IndexTableViewCell.m */,
 				04BA69EA1B3190B6001FC1B2 /* IndexViewController.h */,
 				04BA69EB1B3190B6001FC1B2 /* IndexViewController.m */,
 			);
@@ -655,7 +660,7 @@
 		04D1A4221B2C915B005823E4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = Light;
 				TargetAttributes = {
 					04D1A4291B2C915C005823E4 = {
@@ -755,7 +760,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				048385031B2F205100ED7693 /* PostUser.m in Sources */,
 				04BA69F21B319123001FC1B2 /* CPYViewController.m in Sources */,
 				04BA69E91B319055001FC1B2 /* LightBaseTabBarController.m in Sources */,
 				048385101B2F2C0500ED7693 /* LightRegSexViewController.m in Sources */,
@@ -769,11 +773,13 @@
 				048AC0721B3018D40076DB17 /* LightIntroViewController.m in Sources */,
 				048384ED1B2F09F800ED7693 /* LightTableViewCell.m in Sources */,
 				048385061B2F2B3400ED7693 /* LightRegisterViewController.m in Sources */,
+				04BA69FC1B31A0D8001FC1B2 /* IndexTableViewCell.m in Sources */,
 				048384E31B2D64BF00ED7693 /* LightValidateCode.m in Sources */,
 				04BA69EC1B3190B6001FC1B2 /* IndexViewController.m in Sources */,
 				048384E71B2D68E000ED7693 /* LightArticle.m in Sources */,
 				048384EA1B2D6C9D00ED7693 /* UIButton+Util.m in Sources */,
 				04BA69F81B31918F001FC1B2 /* KDGViewController.m in Sources */,
+				04C7CF0A1B31B4FB00FED3DB /* PostInfo.m in Sources */,
 				0483850C1B2F2BBE00ED7693 /* LightRegDetailViewController.m in Sources */,
 				048AC0711B3018D40076DB17 /* LightIntroView.m in Sources */,
 				048385091B2F2B9500ED7693 /* LightRegCheckViewController.m in Sources */,
@@ -836,6 +842,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -909,6 +916,7 @@
 				INFOPLIST_FILE = Light/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Lightdomain.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -926,6 +934,7 @@
 				INFOPLIST_FILE = Light/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Lightdomain.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -945,6 +954,7 @@
 				);
 				INFOPLIST_FILE = LightTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Lightdomain.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Light.app/Light";
 			};
@@ -960,6 +970,7 @@
 				);
 				INFOPLIST_FILE = LightTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Lightdomain.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Light.app/Light";
 			};
