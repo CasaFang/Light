@@ -27,7 +27,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [SMS_SDK registerApp:LightKey withSecret:LightSecret];
+//    [SMS_SDK registerApp:LightKey withSecret:LightSecret];
     NSLog(@"SMS初始化");
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] ;
     [self toIntro];

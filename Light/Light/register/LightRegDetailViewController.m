@@ -48,7 +48,7 @@
 
 #pragma mark - about subviews
 -(UIImageView *)backgroundImageView{
-    if(_backgroundImageView==nil){
+    if(_backgroundImageView == nil){
         _backgroundImageView = [[UIImageView alloc]initWithFrame:self.view.frame];
         _backgroundImageView.image = [UIImage imageNamed:@"login_background"];
     }
@@ -56,17 +56,17 @@
 }
 
 -(UIImageView*)defaultHeader{
-    if(_defaultHeader==nil){
-        _defaultHeader=[[UIImageView alloc] initWithFrame:CGRectMake(CGRectGetMidX(self.view.frame)-defaultHeaderSize/2, defaultHeaderMarginTop, defaultHeaderSize, defaultHeaderSize)];
-        _defaultHeader.image=[UIImage imageNamed:@"default_icon"];
+    if(_defaultHeader == nil){
+        _defaultHeader = [[UIImageView alloc] initWithFrame:CGRectMake(CGRectGetMidX(self.view.frame)-defaultHeaderSize/2, defaultHeaderMarginTop, defaultHeaderSize, defaultHeaderSize)];
+        _defaultHeader.image = [UIImage imageNamed:@"default_icon"];
     }
     return _defaultHeader;
 }
 
 -(LightTextField*)usernameField{
-    if(_usernameField==nil){
+    if(_usernameField == nil){
         _usernameField = [[LightTextField alloc] initWithFrame:CGRectMake(HorizontalSpacing, CGRectGetMaxY(_defaultHeader.frame)+UsernameFieldMarginTop, CGRectGetWidth(self.view.frame)-HorizontalSpacing*2, TextFieldHeight)];
-        _usernameField.background=[[UIImage imageNamed:@"operationbox_text"]stretchableImageWithLeftCapWidth:10 topCapHeight:15];
+        _usernameField.background = [[UIImage imageNamed:@"operationbox_text"]stretchableImageWithLeftCapWidth:10 topCapHeight:15];
         _usernameField.horizontalPadding = TextFieldPadding;
         _usernameField.verticalPadding = TextFieldPadding;
         _usernameField.placeholder = @"用户名";
@@ -79,23 +79,23 @@
 
 
 -(LightTextField*)passwordField{
-    if(_passwordField==nil){
-        _passwordField=[[LightTextField alloc] initWithFrame:CGRectMake(CGRectGetMinX(_usernameField.frame), CGRectGetMaxY(_usernameField.frame), CGRectGetWidth(_usernameField.frame), CGRectGetHeight(_usernameField.frame))];
-        _passwordField.background=[[UIImage imageNamed:@"operationbox_text"]stretchableImageWithLeftCapWidth:10 topCapHeight:15 ];
-        _passwordField.horizontalPadding=TextFieldPadding;
-        _passwordField.verticalPadding=TextFieldPadding;
-        _passwordField.textAlignment=UIControlContentHorizontalAlignmentCenter;
-        _passwordField.placeholder=@"密码";
-        _passwordField.secureTextEntry=YES;
-        _passwordField.returnKeyType=UIReturnKeyGo;
-        _passwordField.clearButtonMode=UITextFieldViewModeWhileEditing;
+    if(_passwordField == nil){
+        _passwordField = [[LightTextField alloc] initWithFrame:CGRectMake(CGRectGetMinX(_usernameField.frame), CGRectGetMaxY(_usernameField.frame), CGRectGetWidth(_usernameField.frame), CGRectGetHeight(_usernameField.frame))];
+        _passwordField.background = [[UIImage imageNamed:@"operationbox_text"]stretchableImageWithLeftCapWidth:10 topCapHeight:15 ];
+        _passwordField.horizontalPadding = TextFieldPadding;
+        _passwordField.verticalPadding = TextFieldPadding;
+        _passwordField.textAlignment = UIControlContentHorizontalAlignmentCenter;
+        _passwordField.placeholder = @"密码";
+        _passwordField.secureTextEntry = YES;
+        _passwordField.returnKeyType = UIReturnKeyGo;
+        _passwordField.clearButtonMode = UITextFieldViewModeWhileEditing;
     }
     return _passwordField;
 }
 
 -(UIButton *)registerButton{
     if(_registerButton == nil){
-        _registerButton=[[UIButton alloc]initWithFrame:CGRectMake(CGRectGetMinX(self.usernameField.frame), CGRectGetMaxY(self.passwordField.frame)+4*VerticalSpacing, CGRectGetWidth(self.usernameField.frame), CGRectGetHeight(self.usernameField.frame))];
+        _registerButton = [[UIButton alloc]initWithFrame:CGRectMake(CGRectGetMinX(self.usernameField.frame), CGRectGetMaxY(self.passwordField.frame)+4*VerticalSpacing, CGRectGetWidth(self.usernameField.frame), CGRectGetHeight(self.usernameField.frame))];
         [_registerButton setTitle:@"注册" forState:UIControlStateNormal];
         [_registerButton setBackgroundImage:[[UIImage imageNamed:@"blue_login_normal"]stretchableImageWithLeftCapWidth:10 topCapHeight:15 ] forState:UIControlStateNormal];
         [_registerButton setBackgroundImage:[[UIImage imageNamed:@"blue_login_disable"] stretchableImageWithLeftCapWidth:10 topCapHeight:15 ] forState:UIControlStateDisabled];

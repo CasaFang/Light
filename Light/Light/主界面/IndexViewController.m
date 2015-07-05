@@ -73,6 +73,8 @@
     NSURL *url = [NSURL URLWithString:LIGHT_INDEX_URL];
     [post postInfo:getArticleDict infourl:url];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(toTempArticles:) name:@"postResult" object:post.result];
+    NSLog(@"调用tempArticles函数");
+    
 
 }
 
@@ -86,12 +88,12 @@
     _status = [[NSMutableArray alloc]init];
     _statusCells = [[NSMutableArray alloc]init];
     
+    IndexTableViewCell *cell = [[IndexTableViewCell alloc]init];
 
     for (int i=0;i<3;i++){
 //        NSLog(@"title is %@ , content is %@ , pic Url is %@",articles[i][@"title"],articles[i][@"content"],articles[i][@"pic"]);
         [_status addObject:[LightArticle initWithTitle:articles[i][@"title"] andContent:articles[i][@"content"] andPicUrl:articles[i][@"pic"]]];
         NSLog(@"Light Article List %@",[LightArticle initWithTitle:articles[i][@"title"] andContent:articles[i][@"content"] andPicUrl:articles[i][@"pic"]]);
-        IndexTableViewCell *cell = [[IndexTableViewCell alloc]init];
         
         [_statusCells addObject:cell];
     }
@@ -135,8 +137,8 @@
 #pragma mark - 代理方法
 #pragma mark 重新设置单元格高度
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    IndexTableViewCell *cell = _statusCells[indexPath.row];
-    cell.article = _status[indexPath.row];
+    IndexTableViewCell *cell =  _statusCells[indexPath.row];
+    cell.article =  _status[indexPath.row];
     return cell.height;
 }
 

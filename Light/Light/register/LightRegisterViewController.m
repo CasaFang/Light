@@ -63,7 +63,7 @@
 
 #pragma mark - about subviews
 -(UIImageView *)backgroundImageView{
-    if(_backgroundImageView==nil){
+    if(_backgroundImageView == nil){
         _backgroundImageView = [[UIImageView alloc]initWithFrame:self.view.frame];
         _backgroundImageView.image = [UIImage imageNamed:@"login_background"];
     }
@@ -77,7 +77,7 @@
         _banner.text = @"请输入手机号:";
         _banner.textColor = [UIColor redColor];
         _banner.font = [UIFont systemFontOfSize:15];
-        _banner.textAlignment=UIControlContentHorizontalAlignmentLeft;
+        _banner.textAlignment = UIControlContentHorizontalAlignmentLeft;
     }
     return _banner;
 }
@@ -85,7 +85,7 @@
 -(LightTextField *)registerNum{
     if (_registerNum == nil){
         _registerNum = [[LightTextField alloc]initWithFrame:CGRectMake(HorizontalSpacing, CGRectGetHeight(self.view.frame)/4+4*VerticalSpacing, CGRectGetWidth(self.view.frame)-HorizontalSpacing*2, TextFieldHeight)];
-        _registerNum.background=[[UIImage imageNamed:@"operationbox_text"]stretchableImageWithLeftCapWidth:10 topCapHeight:15];
+        _registerNum.background = [[UIImage imageNamed:@"operationbox_text"]stretchableImageWithLeftCapWidth:10 topCapHeight:15];
         _registerNum.horizontalPadding = TextFieldPadding;
         _registerNum.verticalPadding = TextFieldPadding;
         _registerNum.returnKeyType = UIReturnKeyDefault;
@@ -102,7 +102,7 @@
         [_continueButton setBackgroundImage:[[UIImage imageNamed:@"blue_login_normal"]stretchableImageWithLeftCapWidth:10 topCapHeight:15 ] forState:UIControlStateNormal];
         [_continueButton setBackgroundImage:[[UIImage imageNamed:@"blue_login_disable"] stretchableImageWithLeftCapWidth:10 topCapHeight:15 ] forState:UIControlStateDisabled];
         [_continueButton setBackgroundImage:[[UIImage imageNamed:@"blue_login_highlight"]stretchableImageWithLeftCapWidth:10 topCapHeight:15 ] forState:UIControlStateHighlighted];
-        _continueButton.enabled=YES;
+        _continueButton.enabled = YES;
         [_continueButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [_continueButton addTarget:self action:@selector(toContinue:) forControlEvents:UIControlEventTouchUpInside];
         
@@ -141,7 +141,7 @@
 -(UIButton *)haveAccountButton{
     if(_haveAccountButton == nil){
         _haveAccountButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        _haveAccountButton= [[UIButton alloc]initWithFrame:CGRectMake(CGRectGetMinX(self.registerNum.frame)+CGRectGetWidth(self.registerNum.frame)/4, CGRectGetHeight(self.view.frame)-4*TextFieldHeight, CGRectGetWidth(self.registerNum.frame)/2, TextFieldHeight)];
+        _haveAccountButton = [[UIButton alloc]initWithFrame:CGRectMake(CGRectGetMinX(self.registerNum.frame)+CGRectGetWidth(self.registerNum.frame)/4, CGRectGetHeight(self.view.frame)-4*TextFieldHeight, CGRectGetWidth(self.registerNum.frame)/2, TextFieldHeight)];
         [_haveAccountButton setTitleColor:RGBCOLOR(0, 137, 167) forState:UIControlStateNormal];
         [_haveAccountButton setTitle:@"我已经有账号了" forState:UIControlStateNormal];
         _haveAccountButton.titleLabel.font = [UIFont systemFontOfSize:14];

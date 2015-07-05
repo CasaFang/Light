@@ -53,7 +53,7 @@
 
 #pragma mark - about subviews
 -(UIImageView *)backgroundImageView{
-    if(_backgroundImageView==nil){
+    if(_backgroundImageView == nil){
         _backgroundImageView = [[UIImageView alloc]initWithFrame:self.view.frame];
         _backgroundImageView.image = [UIImage imageNamed:@"login_background"];
     }
@@ -68,7 +68,7 @@
         _banner.text = @"验证码:";
         _banner.textColor = [UIColor redColor];
         _banner.font = [UIFont systemFontOfSize:15];
-        _banner.textAlignment=UIControlContentHorizontalAlignmentLeft;
+        _banner.textAlignment = UIControlContentHorizontalAlignmentLeft;
     }
     return _banner;
 }
@@ -76,7 +76,7 @@
 -(LightTextField *)checkNum{
     if (_checkNum == nil){
         _checkNum = [[LightTextField alloc]initWithFrame:CGRectMake(HorizontalSpacing, CGRectGetHeight(self.view.frame)/4+4*VerticalSpacing, CGRectGetWidth(self.view.frame)-HorizontalSpacing*2, TextFieldHeight)];
-        _checkNum.background=[[UIImage imageNamed:@"operationbox_text"]stretchableImageWithLeftCapWidth:10 topCapHeight:15];
+        _checkNum.background = [[UIImage imageNamed:@"operationbox_text"]stretchableImageWithLeftCapWidth:10 topCapHeight:15];
         _checkNum.horizontalPadding = TextFieldPadding;
         _checkNum.verticalPadding = TextFieldPadding;
         _checkNum.returnKeyType = UIReturnKeyDefault;
@@ -116,7 +116,7 @@
          }
     else {
         [SMS_SDK commitVerifyCode:self.checkNum.text result:^(enum SMS_ResponseState state) {
-            if (1==state)
+            if (1 == state)
             {
                 NSLog(@"验证成功");
                 [[UIApplication sharedApplication] setStatusBarHidden:NO];
@@ -126,15 +126,15 @@
                 
                 
             }
-            else if(0==state)
+            else if(0 == state)
             {
                 NSLog(@"验证失败");
-                NSString* str=[NSString stringWithFormat:NSLocalizedString(@"verifycodeerrormsg", nil)];
-                UIAlertView* alert=[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"verifycodeerrortitle", nil)
-                                                              message:str
-                                                             delegate:self
-                                                    cancelButtonTitle:NSLocalizedString(@"sure", nil)
-                                                    otherButtonTitles:nil, nil];
+                NSString* str = [NSString stringWithFormat:NSLocalizedString(@"verifycodeerrormsg", nil)];
+                UIAlertView* alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"verifycodeerrortitle", nil)
+                                                                message:str
+                                                               delegate:self
+                                                      cancelButtonTitle:NSLocalizedString(@"sure", nil)
+                                                      otherButtonTitles:nil, nil];
                 [alert show];
             }
         }];

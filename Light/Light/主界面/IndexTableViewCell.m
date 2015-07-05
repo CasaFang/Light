@@ -35,11 +35,11 @@
 //    ArticleImg.image = [IndexTableViewCell fitSmallImage:[self getImageFromURL:_article.picUrl]];
     [self addSubview:ArticleImg];
     
-    titleBg = [[UIImageView alloc]init];
-    titleBg.backgroundColor =IndexTableViewCellBackgroundColor;
+    titleBg = [[UIImageView alloc] init];
+    titleBg.backgroundColor = IndexTableViewCellBackgroundColor;
     [self addSubview:titleBg];
     
-    title = [[UILabel alloc]init];
+    title = [[UILabel alloc] init];
     [title setFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:IndexTableViewCellCreateAtFontSize]];
     [title setTextColor:[UIColor whiteColor]];
 //    title.text = _article.title;

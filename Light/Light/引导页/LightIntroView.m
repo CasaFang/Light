@@ -211,7 +211,7 @@
 }
 
 - (void)removeCloseViewAtXIndex:(CGFloat*)xIndex {
-    UIView *closeView = [self.scrollView viewWithTag:124];
+    UIView * closeView = [self.scrollView viewWithTag:124];
     if(closeView) {
         [closeView removeFromSuperview];
     }
@@ -306,7 +306,7 @@
 }
 
 - (void)setSwipeToExit:(bool)swipeToExit {
-    if (swipeToExit != _swipeToExit) {
+    if (swipeToExit !=  _swipeToExit) {
         CGFloat contentXIndex = self.scrollView.contentSize.width;
         if(swipeToExit) {
             [self appendCloseViewAtXIndex:&contentXIndex];
