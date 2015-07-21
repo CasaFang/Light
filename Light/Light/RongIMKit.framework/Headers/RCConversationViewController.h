@@ -79,6 +79,17 @@
 @property(nonatomic, strong) NSArray *displayConversationTypeArray;
 
 /**
+ * 是否显示发送者的名字，YES显示，NO不显示，默认是YES。
+ * 有些场景可能用得到，比如单聊时，不需要显示发送者的名字。
+ */
+@property(nonatomic) BOOL displayUserNameInCell;
+
+/**
+ * 默认输入框类型，值为文本或者语言，默认为文本。
+ */
+@property(nonatomic) RCChatSessionInputBarInputType defaultInputType;
+
+/**
  *  init method
  *
  *  @param conversationType conversationType
@@ -221,6 +232,16 @@
  *  @return 返回消息内容
  */
 - (RCMessageContent *)willSendMessage:(RCMessageContent *)messageCotent;
+
+#pragma mark override
+/**
+ *  重写方法，消息发送之后需要append到datasource中，并显示。在这之前调用，可以修改要显示的消息。
+ *
+ *  @param message 消息
+ *
+ *  @return 返回消息
+ */
+- (RCMessage *)willAppendAndDisplayMessage:(RCMessage *)message;
 
 #pragma mark override
 /**

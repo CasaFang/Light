@@ -11,9 +11,15 @@
 #import "LightIntroViewController.h"
 #import "LightBaseTabBarController.h"
 #import <SMS_SDK/SMS_SDK.h>
+#import <RongIMKit/RongIMKit.h>
+
 
 #define LightKey @"82645f6f16b8"
 #define LightSecret @"ea2501269690d16dbe480f5bea373924"
+
+#define RONGCLOUD_IM_APPKEY @"pwe86ga5elcq6"
+
+
 
 @interface AppDelegate ()
 
@@ -27,8 +33,15 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    //Mob短信验证SDK初始化
     [SMS_SDK registerApp:LightKey withSecret:LightSecret];
     NSLog(@"SMS初始化");
+    
+    //融云SDK初始化
+//    [[RCIM sharedRCIM]initWithAppKey:RONGCLOUD_IM_APPKEY];
+    
+    //windows初始化
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] ;
     [self toIntro];
 //    [self toLogin];
